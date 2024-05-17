@@ -5,8 +5,9 @@ const data = {
       overview: "Experience the vast Sahara Desert on camelback.",
       included: ["Camel ride", "Meals", "Guide services"],
       notIncluded: ["Personal expenses", "Tips"],
-      itinerary: {
-        day1: {
+      itinerary: [
+        {
+          day: 1,
           stops: [
             {
               title: "Camel Trek Start",
@@ -18,7 +19,8 @@ const data = {
             },
           ],
         },
-        day2: {
+        {
+          day: 2,
           stops: [
             {
               title: "Sunrise Dune Trek",
@@ -31,7 +33,7 @@ const data = {
             },
           ],
         },
-      },
+      ],
       additionalInfo: [
         "Bring sunscreen and hat",
         "Comfortable clothing recommended",
@@ -66,8 +68,9 @@ const data = {
       overview: "Explore the historical landmarks of Marrakech.",
       included: ["Guided tour", "Entrance fees"],
       notIncluded: ["Meals", "Transportation to meeting point"],
-      itinerary: {
-        day1: {
+      itinerary: [
+        {
+          day: 1,
           stops: [
             {
               title: "Bahia Palace",
@@ -79,7 +82,7 @@ const data = {
             },
           ],
         },
-      },
+      ],
       additionalInfo: ["Tour duration: 4 hours"],
       cancellationPolicy: [
         "Free cancellation up to 24 hours before the tour",
@@ -272,3 +275,20 @@ const data = {
     },
   ],
 };
+
+// Function to log all tours and their respective days with properties
+function logTours(data) {
+  data.tours.forEach((tour) => {
+    console.log(`Tour: ${tour.title}`);
+    tour.itinerary.days.forEach((day) => {
+      console.log(`  ${day.day}:`);
+      day.stops.forEach((stop) => {
+        console.log(`    Stop: ${stop.title}`);
+        console.log(`    Description: ${stop.description}`);
+      });
+    });
+  });
+}
+
+// Calling the function
+logTours(data);
