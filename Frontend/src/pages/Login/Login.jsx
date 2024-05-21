@@ -1,7 +1,11 @@
-import React from "react";
-
+import PageNav from "../../compenents/PageNav/PageNav";
 function Login() {
-  return <div>Login</div>;
+  return (
+    <div>
+      <PageNav />
+      <p>Login</p>
+    </div>
+  );
 }
 
 export default Login;

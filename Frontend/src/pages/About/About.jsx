@@ -1,7 +1,12 @@
-import React from "react";
+import PageNav from "../../compenents/PageNav/PageNav";
 
 function About() {
-  return <div>About</div>;
+  return (
+    <div>
+      <PageNav />
+      <p>About</p>
+    </div>
+  );
 }
 
 export default About;

@@ -1,7 +1,12 @@
-import React from "react";
+import PageNav from "../../compenents/PageNav/PageNav";
 
 function Contact() {
-  return <div>Contact</div>;
+  return (
+    <div>
+      <PageNav />
+      <p>Contact</p>
+    </div>
+  );
 }
 
 export default Contact;

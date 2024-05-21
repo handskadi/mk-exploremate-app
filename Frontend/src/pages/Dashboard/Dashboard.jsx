@@ -1,7 +1,12 @@
-import React from "react";
+import PageNav from "../../compenents/PageNav/PageNav";
 
 function Dashboard() {
-  return <div>Dashboard</div>;
+  return (
+    <div>
+      <PageNav />
+      <p>Dashboard</p>
+    </div>
+  );
 }
 
 export default Dashboard;
