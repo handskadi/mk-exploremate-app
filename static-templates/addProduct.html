@@ -38,81 +38,170 @@
     <div class="container">
       <main class="main">
         <div class="addProductForm">
+          <h3>Let's get started</h3>
           <form>
-            <div class="input-container">
-              <label class="input-label">Product Title</label>
-              <input
-                type="text"
-                placeholder="Enter product title..."
-                class="input-field"
-              />
-            </div>
+            <!-- Step 1 : Basics -->
 
-            <div class="input-container">
-              <label class="input-label">Product Description</label>
-              <textarea
-                id="description"
-                placeholder="Enter product description..."
-                class="textarea-field"
-              ></textarea>
-            </div>
-
-            <hr />
-            <div class="input-container">
-              <label class="input-label">Day 1 Title</label>
-              <input
-                type="text"
-                placeholder="Enter product title..."
-                class="input-field"
-              />
-              <button>+</button>
-            </div>
-            <div class="input-container">
-              <label class="input-label">Day 1 Description</label>
-              <textarea
-                id="description"
-                placeholder="Enter product description..."
-                class="textarea-field"
-              ></textarea>
-              <span></span>
-            </div>
-
-            <hr />
-
-            <div class="input-container">
-              <label class="input-label">Tour Price</label>
-              <input
-                type="text"
-                placeholder="Price per person..."
-                class="input-field"
-              />
-              <select>
-                <option value="">EUR</option>
-                <option value="">USD</option>
-                <option value="">MAD</option>
+            <!-- <div class="input-container">
+              <h4>What type of product are you creating?</h4>
+              <label class="input-label"
+                >Please choose the product type, so that we can clasify you
+                prodyct properly.</label
+              >
+              <select name="category" id="category">
+                <option value="tour">Tour</option>
+                <option value="experience">Experience</option>
+                <option value="accommodation">Accommodation</option>
+                <option value="car_rental">Car Rental</option>
               </select>
             </div>
 
-            <hr />
-
-            <div class="input-container upload">
-              <label class="input-label">Upload Image</label>
+            <div class="input-container">
+              <h4>What is your product title?</h4>
+              <label class="input-label"
+                >Describe product in a catchy title, don't make it longer</label
+              >
               <input
-                type="file"
-                accept="image/*"
-                onchange="previewImage(event)"
+                type="text"
+                placeholder="Enter product title..."
                 class="input-field"
               />
-              <img
-                id="image-preview"
-                src="#"
-                alt="Preview Image"
-                style="display: none; max-width: 100px; max-height: 100px"
+            </div> -->
+
+            <!-- Step 2 : Content -->
+            <!-- <div class="input-container">
+              <h4>Tell us about your product!</h4>
+              <label class="input-label"
+                >Tell you customers what makes your product unique</label
+              >
+              <textarea
+                id="description"
+                placeholder="Enter product description..."
+                class="textarea-field"
+              ></textarea>
+            </div> -->
+
+            <!-- Step 3 : Pricing -->
+            <!-- <div class="input-container">
+              <h4>Price your Product!</h4>
+              <label class="input-label"
+                >Choose your product pricing per person!</label
+              >
+              <div class="pricing-container">
+                <input
+                  type="text"
+                  placeholder="Price per person..."
+                  class="input-field"
+                />
+
+                <select>
+                  <option value="">EUR</option>
+                  <option value="">USD</option>
+                  <option value="">MAD</option>
+                </select>
+
+                <select>
+                  <option value="">1</option>
+                  <option value="">2</option>
+                  <option value="">4</option>
+                  <option value="">5</option>
+                  <option value="">6</option>
+                  <option value="">7</option>
+                  <option value="">8</option>
+                  <option value="">9</option>
+                  <option value="">10</option>
+                </select>
+
+                <span> /Person</span>
+              </div>
+            </div> -->
+
+            <!-- Step 4: Finish-->
+            <div class="input-container">
+              <h4>Are you Done?</h4>
+              <label class="input-label"
+                >Please review your product befor you submit it!</label
+              >
+            </div>
+
+            <div class="input-container">
+              <h4>What type of product are you creating?</h4>
+              <label class="input-label"
+                >Please choose the product type, so that we can clasify you
+                prodyct properly.</label
+              >
+              <select name="category" id="category" selected="experience">
+                <option value="tour">Tour</option>
+                <option value="experience">Experience</option>
+                <option value="accommodation">Accommodation</option>
+                <option value="car_rental">Car Rental</option>
+              </select>
+            </div>
+
+            <div class="input-container">
+              <h4>What is your product title?</h4>
+              <label class="input-label"
+                >Describe product in a catchy title, don't make it longer</label
+              >
+              <input
+                type="text"
+                placeholder="Enter product title..."
+                class="input-field"
+                value="Ait ben Haddou Day Trip From MArrakech"
               />
             </div>
 
+            <div class="input-container">
+              <h4>Tell us about your product!</h4>
+              <label class="input-label"
+                >Tell you customers what makes your product unique</label
+              >
+              <textarea
+                id="description"
+                placeholder="Enter product description..."
+                class="textarea-field"
+              >
+Ait ben Haddou Day Trip From MArrakech, Ait ben Haddou Day Trip From MArrakech, Ait ben Haddou Day Trip From MArrakech, Ait ben Haddou Day Trip From MArrakech, Ait ben Haddou Day Trip From MArrakech</textarea
+              >
+            </div>
+
+            <div class="input-container">
+              <h4>Price your Product!</h4>
+              <label class="input-label"
+                >Choose your product pricing per person!</label
+              >
+              <div class="pricing-container">
+                <input
+                  type="text"
+                  placeholder="Price per person..."
+                  class="input-field"
+                  value="2500"
+                />
+
+                <select selected="mad">
+                  <option value="">EUR</option>
+                  <option value="">USD</option>
+                  <option value="mad">MAD</option>
+                </select>
+
+                <select selected="4">
+                  <option value="">1</option>
+                  <option value="">2</option>
+                  <option value="4">4</option>
+                  <option value="">5</option>
+                  <option value="">6</option>
+                  <option value="">7</option>
+                  <option value="">8</option>
+                  <option value="">9</option>
+                  <option value="">10</option>
+                </select>
+
+                <span> /Person</span>
+              </div>
+            </div>
+
             <div class="button-container">
-              <button>Create Product</button>
+              <button>Save and continue</button>
             </div>
           </form>
         </div>
@@ -120,20 +209,21 @@
 
       <aside class="aside">
         <ul class="product-stats">
-          <li class="product-stats-main">Products: <span>30 </span></li>
+          <li class="product-stats-main">
+            <span>0% Complete</span><br />
+            <progress value="32" max="100">0%</progress>
+          </li>
+          <li><i class="fa-solid fa-circle-check primary-color"></i> BASICS</li>
           <li>
-            <i class="fa-solid fa-circle-check primary-color"></i> Active:
-            <span>18</span>
+            <i class="fa-solid fa-circle-check danger-even"></i>
+            CONTENT
           </li>
           <li>
-            <i class="fa-solid fa-triangle-exclamation danger-color"></i>
-            Inactive:
-            <span>8</span>
+            <i class="fa-solid fa-circle-check danger-even"></i>
+            PRICING
           </li>
-          <li>
-            <i class="fa-regular fa-circle-pause"></i> Paused:
-            <span>4</span>
-          </li>
+          <li><i class="fa-solid fa-circle-check danger-even"></i> FINISH</li>
+          <hr class="vertical-line" />
         </ul>
       </aside>
     </div>
