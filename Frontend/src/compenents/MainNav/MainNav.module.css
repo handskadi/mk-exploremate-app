@@ -1,0 +1,18 @@
+/* Navigation*/
+.mainNav ul,
+.rightNav ul {
+  display: flex;
+
+  list-style: none;
+  color: hsl(218, 4%, 30%);
+}
+
+.mainNav ul li,
+.rightNav ul li {
+  padding: 0px 5px;
+  margin: 0px 5px;
+}
+.mainNav .active a {
+  color: #186b6d;
+  font-weight: 600;
+}

@@ -1,5 +1,11 @@
+import Logo from "../Logo/Logo";
+import MainNav from "../MainNav/MainNav";
 function Header() {
-  return <div>Header</div>;
+  return (
+    <header className="header">
+      <Logo />
+      <MainNav />
+    </header>
+  );
 }
-
 export default Header;

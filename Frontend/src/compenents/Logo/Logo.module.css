@@ -1,0 +1,9 @@
+.logo img {
+  max-width: 150px;
+  padding-left: 20px;
+}
+
+.logo h1 {
+  position: absolute;
+  font-size: 0px;
+}
