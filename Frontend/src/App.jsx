@@ -7,17 +7,15 @@ import ContactPage from "./pages/Contact/Contact";
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<Homepage />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Homepage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

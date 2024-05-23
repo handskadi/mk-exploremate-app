@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Home - ExploreMate</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <h1>Mk ExploreMake App</h1>
+        <img src="image/logo.png" />
+      </div>
+      <div class="main-nav">
+        <ul>
+          <li>Home</li>
+          <li>Dashboard</li>
+          <li>Products</li>
+          <li>About</li>
+          <li>contact</li>
+        </ul>
+      </div>
+      <div class="right-nav">
+        <ul>
+          <li>Company Account</li>
+          <li>Updates</li>
+
+          <li>Help</li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="container">
+      <main class="main">
+        <div class="addProductForm">
+          <form>
+            <div class="input-container">
+              <label class="input-label">Product Title</label>
+              <input
+                type="text"
+                placeholder="Enter product title..."
+                class="input-field"
+              />
+            </div>
+
+            <div class="input-container">
+              <label class="input-label">Product Description</label>
+              <textarea
+                id="description"
+                placeholder="Enter product description..."
+                class="textarea-field"
+              ></textarea>
+            </div>
+
+            <hr />
+            <div class="input-container">
+              <label class="input-label">Day 1 Title</label>
+              <input
+                type="text"
+                placeholder="Enter product title..."
+                class="input-field"
+              />
+              <button>+</button>
+            </div>
+            <div class="input-container">
+              <label class="input-label">Day 1 Description</label>
+              <textarea
+                id="description"
+                placeholder="Enter product description..."
+                class="textarea-field"
+              ></textarea>
+              <span></span>
+            </div>
+
+            <hr />
+
+            <div class="input-container">
+              <label class="input-label">Tour Price</label>
+              <input
+                type="text"
+                placeholder="Price per person..."
+                class="input-field"
+              />
+              <select>
+                <option value="">EUR</option>
+                <option value="">USD</option>
+                <option value="">MAD</option>
+              </select>
+            </div>
+
+            <hr />
+
+            <div class="input-container upload">
+              <label class="input-label">Upload Image</label>
+              <input
+                type="file"
+                accept="image/*"
+                onchange="previewImage(event)"
+                class="input-field"
+              />
+              <img
+                id="image-preview"
+                src="#"
+                alt="Preview Image"
+                style="display: none; max-width: 100px; max-height: 100px"
+              />
+            </div>
+
+            <div class="button-container">
+              <button>Create Product</button>
+            </div>
+          </form>
+        </div>
+      </main>
+
+      <aside class="aside">
+        <ul class="product-stats">
+          <li class="product-stats-main">Products: <span>30 </span></li>
+          <li>
+            <i class="fa-solid fa-circle-check primary-color"></i> Active:
+            <span>18</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-triangle-exclamation danger-color"></i>
+            Inactive:
+            <span>8</span>
+          </li>
+          <li>
+            <i class="fa-regular fa-circle-pause"></i> Paused:
+            <span>4</span>
+          </li>
+        </ul>
+      </aside>
+    </div>
+
+    <footer class="footer">Copyright 2024. Mk ExploreMate App</footer>
+  </body>
+</html>

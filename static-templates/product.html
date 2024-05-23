@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Home - ExploreMate</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <h1>Mk ExploreMake App</h1>
+        <img src="image/logo.png" />
+      </div>
+      <div class="main-nav">
+        <ul>
+          <li>Home</li>
+          <li>Dashboard</li>
+          <li>Products</li>
+          <li>About</li>
+          <li>contact</li>
+        </ul>
+      </div>
+      <div class="right-nav">
+        <ul>
+          <li>Company Account</li>
+          <li>Updates</li>
+
+          <li>Help</li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="container">
+      <main class="main">
+        <article>
+          <div class="filter">
+            <select>
+              <option value="">Tours</option>
+              <option value="">Activities</option>
+              <option value="">Accomodation</option>
+              <option value="">Car Rental</option>
+            </select>
+          </div>
+          <header class="main-header">
+            <h1>Products</h1>
+            <button>create new product</button>
+          </header>
+          <section class="product">
+            <div class="product-media">
+              <img src="image/tours/tinghir-1.jpg" alt="" />
+              <span class="status-active">
+                <i class="fa-regular fa-circle-check"></i> Active</span
+              >
+            </div>
+            <div class="product-details">
+              <h2>
+                Private 3 Days Desert Tour from Marrakech to Merzouga Desert
+              </h2>
+              <span>Product code: 903MK2 </span>|
+              <span
+                ><a href="#" class="primary-color">view your product</a></span
+              >
+              |
+              <span class="primary-color"
+                ><strong
+                  ><i class="fa-solid fa-circle-check"></i> Good</strong
+                ></span
+              >
+            </div>
+            <div class="product-actions">
+              <button class="primary-o">Promote</button
+              ><button class="primary">Manage</button>
+            </div>
+          </section>
+          <section class="product">
+            <div class="product-media">
+              <img src="image/tours/marrakech-1.jpg" alt="" />
+              <span class="status-block">
+                <i class="fa-regular fa-circle-xmark"></i> Inactive</span
+              >
+            </div>
+            <div class="product-details">
+              <h2>Full Day Your: Guided Marrakech Discovery Tour</h2>
+              <span>Product code: 803MK2 </span>|
+              <span
+                ><a href="#" class="primary-color">view your product</a></span
+              >
+              |
+              <span class="warning-color"
+                ><strong
+                  ><i class="fa-solid fa-triangle-exclamation"></i>
+                  Average</strong
+                ></span
+              >
+            </div>
+            <div class="product-actions">
+              <button class="primary-o">Promote</button
+              ><button class="primary">Manage</button>
+            </div>
+          </section>
+          <section class="product">
+            <div class="product-media">
+              <img src="image/tours/ouarzazate-1.jpg" alt="" />
+              <span class="status-pause">
+                <i class="fa-regular fa-circle-pause"></i> Pause</span
+              >
+            </div>
+            <div class="product-details">
+              <h2>Ait Benhaddou - UNESCO World Heritage Discovry Tour</h2>
+              <span>Product code: 874MK2 </span>|
+              <span
+                ><a href="#" class="primary-color">view your product</a></span
+              >
+              |
+              <span class="danger-color"
+                ><strong
+                  ><i class="fa-solid fa-circle-exclamation"></i> Poor</strong
+                ></span
+              >
+            </div>
+            <div class="product-actions">
+              <button class="primary-o">Promote</button
+              ><button class="primary">Manage</button>
+            </div>
+          </section>
+        </article>
+      </main>
+      <aside class="aside">
+        <ul class="product-stats">
+          <li class="product-stats-main">Products: <span>30 </span></li>
+          <li>
+            <i class="fa-solid fa-circle-check primary-color"></i> Active:
+            <span>18</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-triangle-exclamation danger-color"></i>
+            Inactive:
+            <span>8</span>
+          </li>
+          <li>
+            <i class="fa-regular fa-circle-pause"></i> Paused:
+            <span>4</span>
+          </li>
+        </ul>
+      </aside>
+    </div>
+
+    <footer class="footer">Copyright 2024. Mk ExploreMate App</footer>
+  </body>
+</html>
