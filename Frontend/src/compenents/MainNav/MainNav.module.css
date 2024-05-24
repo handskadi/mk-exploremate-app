@@ -2,7 +2,6 @@
 .mainNav ul,
 .rightNav ul {
   display: flex;
-
   list-style: none;
   color: hsl(218, 4%, 30%);
 }
@@ -15,4 +14,9 @@
 .mainNav :global(.active) {
   color: #186b6d;
   font-weight: 600;
+}
+
+.mainNav a {
+  color: #444444;
+  text-decoration: none;
 }
