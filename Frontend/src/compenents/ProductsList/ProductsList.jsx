@@ -1,8 +1,13 @@
+import HomeProductItem from "../HomeProductItem/HomeProductItem";
 import styles from "./ProductsList.module.css";
 import PropTypes from "prop-types";
 
-function ProductsList({ products }) {
-  return <div className={styles.container}>{products[0].title}</div>;
+function ProductsList() {
+  return (
+    <div className={styles.container}>
+      <HomeProductItem />
+    </div>
+  );
 }
 
 ProductsList.propTypes = {
