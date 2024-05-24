@@ -2,13 +2,15 @@ import Footer from "../../compenents/Footer/Footer";
 import Header from "../../compenents/Header/Header";
 import styles from "./Home.module.css";
 import Slider from "../../compenents/Slider/Slider";
+import ProductsList from "../../compenents/ProductsList/ProductsList";
+import PropTypes from "prop-types";
 
-function Home() {
+function Home({ products }) {
   return (
     <>
       <Header />
       <div className={styles.container}>
-        <Slider className={styles.homeContainer} />
+        <Slider />
         <div className={`${styles.homeContainer} ${styles.features}`}>
           Features
         </div>
@@ -18,9 +20,7 @@ function Home() {
         <div className={`${styles.homeContainer} ${styles.callToAction}`}>
           CallToAction
         </div>
-        <div className={`${styles.homeContainer} ${styles.products}`}>
-          Products
-        </div>
+        <ProductsList products={products} />
         <div className={`${styles.homeContainer} ${styles.customerReviews}`}>
           CustomerReviews
         </div>
@@ -33,4 +33,7 @@ function Home() {
   );
 }
 
+Home.propTypes = {
+  products: PropTypes.array.isRequired,
+};
 export default Home;

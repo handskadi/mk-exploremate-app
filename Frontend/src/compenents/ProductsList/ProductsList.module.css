@@ -1,0 +1,7 @@
+.container {
+  background: white;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  min-height: 100px;
+}

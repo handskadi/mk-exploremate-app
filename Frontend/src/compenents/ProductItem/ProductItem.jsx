@@ -21,7 +21,6 @@ import styles from "./ProductItem.module.css";
 import { useState } from "react";
 
 function ProductItem({ product }) {
-  console.log(product);
   const [productTitle, setProductTitle] = useState(product.title);
   const [productLocation, setProductLocation] = useState(product.location);
   const [ProductDuration, setProductDuration] = useState(product.duration);

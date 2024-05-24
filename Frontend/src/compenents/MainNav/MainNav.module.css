@@ -16,7 +16,8 @@
   font-weight: 600;
 }
 
-.mainNav a {
+.mainNav a,
+.rightNav a {
   color: #444444;
   text-decoration: none;
 }
