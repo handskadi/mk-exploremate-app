@@ -1,9 +1,7 @@
+import Header from "../../compenents/Header/Header";
+
 function Dashboard() {
-  return (
-    <div>
-      <p>Dashboard</p>
-    </div>
-  );
+  return <Header />;
 }
 
 export default Dashboard;

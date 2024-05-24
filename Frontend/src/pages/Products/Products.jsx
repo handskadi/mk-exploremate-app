@@ -1,9 +1,7 @@
+import Header from "../../compenents/Header/Header";
+
 function Products() {
-  return (
-    <div>
-      <p>Products</p>
-    </div>
-  );
+  return <Header />;
 }
 
 export default Products;

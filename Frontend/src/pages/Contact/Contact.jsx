@@ -1,9 +1,7 @@
+import Header from "../../compenents/Header/Header";
+
 function Contact() {
-  return (
-    <div>
-      <p>Contact</p>
-    </div>
-  );
+  return <Header />;
 }
 
 export default Contact;

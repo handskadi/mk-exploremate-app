@@ -12,7 +12,7 @@
   padding: 0px 5px;
   margin: 0px 5px;
 }
-.mainNav .active a {
+.mainNav :global(.active) {
   color: #186b6d;
   font-weight: 600;
 }

@@ -1,5 +1,10 @@
+import styles from "./Footer.module.css";
 function Footer() {
-  return <div>Footer</div>;
+  return (
+    <footer className={styles.footer}>
+      <span>&copy; 2024 Mk ExploreMate App</span>
+    </footer>
+  );
 }
 
 export default Footer;

@@ -1,9 +1,7 @@
+import Header from "../../compenents/Header/Header";
+
 function About() {
-  return (
-    <div>
-      <p>About</p>
-    </div>
-  );
+  return <Header />;
 }
 
 export default About;

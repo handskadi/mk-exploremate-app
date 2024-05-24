@@ -1,0 +1,46 @@
+.aside {
+  background: #fff;
+  margin: 0 auto;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.aside {
+  width: 80%;
+  height: 350px;
+  padding: 20px;
+}
+
+.productStats {
+  list-style: none;
+  position: relative;
+}
+
+.productStats li {
+  padding: 10px;
+}
+
+.productStats li svg {
+  padding-right: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.productStatsMain {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  color: #186b6d;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #186b6d;
+}
+
+/* Colors */
+.primaryColor {
+  color: #186b6d;
+}
+.dangerColor {
+  color: #b50e0e;
+}
+.evenColor {
+  color: #999999;
+}

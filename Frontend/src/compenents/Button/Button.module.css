@@ -1,0 +1,31 @@
+.mainBttn {
+  border: 1px solid #186b6d;
+  justify-self: end;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 600;
+  width: 230px;
+  height: 43px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.primary {
+  background: #186b6d;
+  color: #fff;
+}
+
+.primaryO {
+  color: #186b6d;
+  background: #fff;
+}
+
+.primary:hover {
+  background: #195657;
+  color: #fff;
+}
+
+.primaryO:hover {
+  color: #186b6d;
+  background: #d6fcf9;
+}

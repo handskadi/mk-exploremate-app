@@ -1,9 +1,7 @@
+import Header from "../../compenents/Header/Header";
+
 function Login() {
-  return (
-    <div>
-      <p>Login</p>
-    </div>
-  );
+  return <Header />;
 }
 
 export default Login;
