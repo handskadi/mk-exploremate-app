@@ -1,6 +1,6 @@
 import styles from "./Slider.module.css";
-import sliderImage from "../../image/slides/slide1.jpg";
-import sliderImage2 from "../../image/slides/slide2.jpg";
+import sliderImage from "../../image/slides/slide3.jpg";
+import sliderImage2 from "../../image/slides/slide4.jpg";
 import { useEffect, useState } from "react";
 
 function Slider() {

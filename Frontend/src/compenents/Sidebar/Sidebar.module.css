@@ -2,17 +2,18 @@
   background: #fff;
   margin: 0 auto;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
-}
-
-.aside {
-  width: 80%;
-  height: 350px;
+  height: 300px;
   padding: 20px;
+  margin: 0;
+  width: 200px;
+  place-self: start;
 }
 
 .productStats {
   list-style: none;
   position: relative;
+  padding: 0;
+  text-align: center;
 }
 
 .productStats li {
@@ -43,4 +44,10 @@
 }
 .evenColor {
   color: #999999;
+}
+
+@media only screen and (max-width: 1254px) {
+  .aside {
+    display: none;
+  }
 }
