@@ -9,7 +9,6 @@ import {
   faListCheck,
   faChartBar,
 } from "@fortawesome/free-solid-svg-icons";
-
 import {
   faCalendarCheck,
   faCircleXmark,
@@ -18,59 +17,50 @@ import {
 import PropTypes from "prop-types";
 import Button from "../Button/Button";
 import styles from "./ProductItem.module.css";
-import { useState } from "react";
 
 function ProductItem({ product }) {
-  const [productTitle, setProductTitle] = useState(product.title);
-  const [productLocation, setProductLocation] = useState(product.location);
-  const [ProductDuration, setProductDuration] = useState(product.duration);
-  const [productCode, setProductCode] = useState(product.code);
-  const [productStatus, setProductStatus] = useState(product.status);
-  const [isPrivate, setIsPrivate] = useState(product.isPrivateTour);
-  const [rateStatus, setRateStatus] = useState(product.rate);
-  const [image, setImage] = useState(product.image);
-
-  /* Temporal fix for Eslint unused-vars*/
-  () => {
-    setProductTitle();
-    setProductLocation();
-    setProductDuration();
-    setProductCode();
-    setProductStatus();
-    setIsPrivate();
-    setRateStatus();
-    setImage();
-  };
+  const {
+    title,
+    location,
+    duration,
+    code,
+    status,
+    isPrivateTour,
+    rate,
+    image,
+  } = product;
 
   return (
     <section className={styles.product}>
       <div className={styles.productMedia}>
-        <img src={image} alt={productTitle} />
-        {productStatus === "active" && (
+        <img src={image} alt={title} />
+        {status === "active" && (
           <span className={styles.statusActive}>
             <FontAwesomeIcon icon={faCircleCheck} /> Active
           </span>
         )}
-        {productStatus === "inactive" && (
+        {status === "inactive" && (
           <span className={styles.statusInactive}>
             <FontAwesomeIcon icon={faCircleXmark} /> Inactive
           </span>
         )}
-        {productStatus === "pause" && (
+        {status === "pause" && (
           <span className={styles.statusPause}>
             <FontAwesomeIcon icon={faCirclePause} /> Pause
           </span>
         )}
       </div>
       <div className={styles.productDetails}>
-        <h2>{productTitle}</h2>
+        <h2>
+          {title} - {duration} Days
+        </h2>
         <p>
           <span>
             <FontAwesomeIcon
               icon={faLocationDot}
               className={styles.warningColor}
             />{" "}
-            {productLocation}
+            {location}
           </span>{" "}
           |{" "}
           <span>
@@ -78,10 +68,10 @@ function ProductItem({ product }) {
               icon={faCalendarCheck}
               className={styles.primaryColor}
             />{" "}
-            {ProductDuration} Days
+            {duration} Days
           </span>{" "}
           |{" "}
-          {isPrivate ? (
+          {isPrivateTour ? (
             <span>
               <FontAwesomeIcon
                 icon={faUserCheck}
@@ -99,14 +89,14 @@ function ProductItem({ product }) {
             </span>
           )}
         </p>
-        <span>Product code: {productCode} </span>|{" "}
+        <span>Product code: {code} </span>|{" "}
         <span>
           <a href="#" className={styles.primaryColor}>
             view your product
           </a>
         </span>{" "}
         |
-        {rateStatus === "good" && (
+        {rate === "good" && (
           <span className={styles.primaryColor}>
             <strong>
               {" "}
@@ -114,7 +104,7 @@ function ProductItem({ product }) {
             </strong>
           </span>
         )}
-        {rateStatus === "average" && (
+        {rate === "average" && (
           <span className={styles.warningColor}>
             <strong>
               {" "}
@@ -122,7 +112,7 @@ function ProductItem({ product }) {
             </strong>
           </span>
         )}
-        {rateStatus === "poor" && (
+        {rate === "poor" && (
           <span className={styles.dangerColor}>
             <strong>
               {" "}

@@ -4,6 +4,8 @@ import styles from "./Home.module.css";
 import Slider from "../../compenents/Slider/Slider";
 import ProductsList from "../../compenents/ProductsList/ProductsList";
 import PropTypes from "prop-types";
+import CallToAction from "../../compenents/CallToAction/CallToAction";
+import TopDestination from "../../compenents/TopDestination/TopDestination";
 
 function Home({ products }) {
   return (
@@ -14,12 +16,9 @@ function Home({ products }) {
         <div className={`${styles.homeContainer} ${styles.features}`}>
           Features
         </div>
-        <div className={`${styles.homeContainer} ${styles.topDestination}`}>
-          TopDestination
-        </div>
-        <div className={`${styles.homeContainer} ${styles.callToAction}`}>
-          CallToAction
-        </div>
+
+        <TopDestination />
+        <CallToAction />
         <ProductsList products={products} />
         <div className={`${styles.homeContainer} ${styles.customerReviews}`}>
           CustomerReviews

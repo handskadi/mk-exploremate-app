@@ -1,7 +1,9 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "../Button/Button";
 import ProductItem from "../ProductItem/ProductItem";
 import styles from "./Main.module.css";
 import PropTypes from "prop-types";
+import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
 
 function Main({ products }) {
   return (
@@ -18,7 +20,12 @@ function Main({ products }) {
 
         <header className={styles.mainHeader}>
           <h1>Products</h1>
-          <Button type="O">create new product</Button>
+          <Button type="O">
+            {" "}
+            create{" "}
+            <span className={styles.creatProductButton}>new product</span>{" "}
+            <FontAwesomeIcon icon={faSquarePlus} />
+          </Button>
         </header>
 
         {products.map((product, index) => (

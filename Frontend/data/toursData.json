@@ -1,34 +1,48 @@
 {
   "tours": [
     {
-      "title": "3 Days Tour from Marrakech to Merzouga",
+      "title": "Marrakech to Merzouga Desert Tour",
+      "excerpt": "A full 3 Days desert tour your from Marrakech to Merzouga. Discover the Sahara Desert of Merzouga.",
       "duration": 3,
       "location": "Marrakech",
       "code": "903MK2",
       "status": "active",
       "isPrivateTour": true,
       "rate": "good",
-      "image": "https://www.moroccoworldnews.com/wp-content/uploads/2024/01/tripadvisor-names-merzouga-worlds-14th-best-nature-destination-800x600.jpeg"
+      "image": "http://localhost:5173/images/tours/image1.jpg"
     },
     {
-      "title": "2 Days Tour from Marrakech to M'hamid",
+      "title": "Marrakech to Erg Chegaga Tour",
+      "excerpt": "Discover the Erg Chegaga desert of Morocco and explore the fascinating village of M'hamid.",
       "duration": 2,
       "location": "M'hamid",
       "code": "807MK4",
       "status": "inactive",
       "isPrivateTour": false,
       "rate": "poor",
-      "image": "https://specials-images.forbesimg.com/imageserve/499553781/Main-square-of-Marrakesh/960x0.jpg"
+      "image": "http://localhost:5173/images/tours/image2.jpg"
     },
     {
-      "title": "8 Days Imperial Cities & Sahara",
+      "title": "Morocco Imperial Cities Tour",
+      "excerpt": "Experience our long Morocco Imperial Tours, visit the most beautiful cities and villages from south to North.",
       "duration": 8,
       "location": "Casablanca",
       "code": "890MK6",
       "status": "pause",
       "isPrivateTour": true,
+      "rate": "average",
+      "image": "http://localhost:5173/images/tours/image3.jpg"
+    },
+    {
+      "title": "Essaouira-Mogador Excursion ",
+      "excerpt": "Enjoy the beauty of coastal city of Essouira, visit the portuges Port and the old Medina and live the Ganwi vibes.",
+      "duration": 1,
+      "location": "Essaouira",
+      "code": "5830MK9",
+      "status": "active",
+      "isPrivateTour": true,
       "rate": "good",
-      "image": "https://www.barcelo.com/guia-turismo/wp-content/uploads/2020/05/casablanca.jpg"
+      "image": "http://localhost:5173/images/tours/image4.jpg"
     }
   ]
 }

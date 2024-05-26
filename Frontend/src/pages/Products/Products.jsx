@@ -11,7 +11,7 @@ function Products({ products }) {
       <Header />
       <div className={styles.container}>
         <Main products={products} />
-        <Sidebar />
+        <Sidebar products={products} />
       </div>
       <Footer />
     </>
