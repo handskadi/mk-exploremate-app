@@ -1,42 +1,46 @@
+import TopDestinationItem from "../TopDestinationItem/TopDestinationItem";
 import styles from "./TopDestination.module.css";
+import PropTypes from "prop-types";
 
+const destinations = [
+  {
+    image: "http://localhost:5173/images/destinations/des1.jpg",
+    name: "Marrakech",
+    numberOfProdutcs: 4,
+  },
+  {
+    image: "http://localhost:5173/images/destinations/des2.jpg",
+    name: "Ouarzazate",
+    numberOfProdutcs: 5,
+  },
+  {
+    image: "http://localhost:5173/images/destinations/des3.jpg",
+    name: "Merzouga",
+    numberOfProdutcs: 3,
+  },
+];
 function TopDestination() {
   return (
     <div className={styles.container}>
       <div className={styles.topDestination}>
         <div className={styles.sectionTitle}>
-          <h2>Top Destination</h2>
+          <h2>Top Destinations</h2>
           <p>Enjoy our Top Destinations</p>
         </div>
         <div className={styles.destinationCards}>
-          <button className={styles.card}>
-            <img
-              src="http://localhost:5173/images/destinations/des1.jpg"
-              alt=""
+          {destinations.map((destination) => (
+            <TopDestinationItem
+              destination={destination}
+              key={destination.name}
             />
-            <h4>Marrakech</h4>
-            <span>( 3 Products )</span>
-          </button>
-          <button className={styles.card}>
-            <img
-              src="http://localhost:5173/images/destinations/des2.jpg"
-              alt=""
-            />
-            <h4>Ouarzazate</h4>
-            <span>( 5 Products )</span>
-          </button>
-          <button className={styles.card}>
-            <img
-              src="http://localhost:5173/images/destinations/des3.jpg"
-              alt=""
-            />
-            <h4>Merzouga</h4>
-            <span>( 3 Products )</span>
-          </button>
+          ))}
         </div>
       </div>
     </div>
   );
 }
 
+TopDestination.propTypes = {
+  destination: PropTypes.object,
+};
 export default TopDestination;

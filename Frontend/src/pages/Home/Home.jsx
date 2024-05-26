@@ -6,26 +6,40 @@ import ProductsList from "../../compenents/ProductsList/ProductsList";
 import PropTypes from "prop-types";
 import CallToAction from "../../compenents/CallToAction/CallToAction";
 import TopDestination from "../../compenents/TopDestination/TopDestination";
-
-function Home({ products }) {
+import HomeFeatures from "../../compenents/HomeFeatures/HomeFeatures";
+import Reviews from "../../compenents/Reviews/Reviews";
+import HomeFooterDetails from "../../compenents/HomeFooterDetails/HomeFooterDetails";
+function Home({
+  products,
+  wishlistCount,
+  setWishlistCount,
+  addTpCartCount,
+  setAddTpCartCount,
+  reviews,
+}) {
   return (
     <>
-      <Header />
+      <Header
+        wishlistCount={wishlistCount}
+        setWishlistCount={setWishlistCount}
+        addTpCartCount={addTpCartCount}
+        setAddTpCartCount={setAddTpCartCount}
+      />
       <div className={styles.container}>
         <Slider />
-        <div className={`${styles.homeContainer} ${styles.features}`}>
-          Features
-        </div>
+        <HomeFeatures />
 
         <TopDestination />
         <CallToAction />
-        <ProductsList products={products} />
-        <div className={`${styles.homeContainer} ${styles.customerReviews}`}>
-          CustomerReviews
-        </div>
-        <div className={`${styles.homeContainer} ${styles.footerDetails}`}>
-          FooterDetails
-        </div>
+        <ProductsList
+          products={products}
+          wishlistCount={wishlistCount}
+          setWishlistCount={setWishlistCount}
+          addTpCartCount={addTpCartCount}
+          setAddTpCartCount={setAddTpCartCount}
+        />
+        <Reviews reviews={reviews} />
+        <HomeFooterDetails />
       </div>
       <Footer />
     </>
@@ -34,5 +48,10 @@ function Home({ products }) {
 
 Home.propTypes = {
   products: PropTypes.array.isRequired,
+  reviews: PropTypes.array.isRequired,
+  wishlistCount: PropTypes.number,
+  setWishlistCount: PropTypes.func,
+  addTpCartCount: PropTypes.number,
+  setAddTpCartCount: PropTypes.func,
 };
 export default Home;

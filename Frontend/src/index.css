@@ -127,3 +127,10 @@ option {
   align-content: center;
   gap: 20px;
 }
+
+.carousel {
+  padding-bottom: 20px;
+}
+.carousel .carousel-status {
+  display: none;
+}

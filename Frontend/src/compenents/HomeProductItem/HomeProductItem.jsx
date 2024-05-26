@@ -2,23 +2,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleCheck,
   faCircleExclamation,
-  faHeart,
+  faHeartCircleCheck,
+  faHeartCirclePlus,
   faLocationDot,
   faRoadCircleCheck,
   faTriangleExclamation,
   faUserCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
-import {
-  faClock,
-  faHeart as faHeartEmpty,
-} from "@fortawesome/free-regular-svg-icons";
+import { faClock } from "@fortawesome/free-regular-svg-icons";
 import styles from "./HomeProductItem.module.css";
 import Button from "./../Button/Button";
 import { useState } from "react";
 
-function HomeProductItem({ product }) {
+function HomeProductItem({ product, setWishlistCount, setAddTpCartCount }) {
   const [isAddedToWishList, SetIsAddedToWishList] = useState(false);
+  const [isAddedtoCart, setIsAddedToCart] = useState(false);
+
   return (
     <div className={styles.productCard}>
       <div className={styles.productMedia}>
@@ -45,12 +45,18 @@ function HomeProductItem({ product }) {
           className={styles.wishListHeaert}
           onClick={() => {
             SetIsAddedToWishList(!isAddedToWishList);
+            !isAddedToWishList
+              ? setWishlistCount((w) => w + 1)
+              : setWishlistCount((w) => w - 1);
           }}
         >
           {isAddedToWishList ? (
-            <FontAwesomeIcon icon={faHeart} />
+            <FontAwesomeIcon icon={faHeartCircleCheck} />
           ) : (
-            <FontAwesomeIcon icon={faHeartEmpty} />
+            <FontAwesomeIcon
+              icon={faHeartCirclePlus}
+              style={{ color: "#186b6d" }}
+            />
           )}
         </span>
       </div>
@@ -74,7 +80,18 @@ function HomeProductItem({ product }) {
         <p>{product.excerpt}</p>
       </div>
       <div className={styles.productButtons}>
-        <Button fontSize="13px">Book Now</Button>
+        <Button
+          fontSize="13px"
+          onClick={() => {
+            setIsAddedToCart(!isAddedtoCart);
+            !isAddedtoCart
+              ? setAddTpCartCount((a) => a + 1)
+              : setAddTpCartCount((a) => a - 1);
+          }}
+          bgColor={isAddedtoCart ? "#979797" : "#186b6d"}
+        >
+          {!isAddedtoCart ? "Add to Cart" : "Added"}
+        </Button>
         <Button type="O" fontSize="13px">
           View Details
         </Button>
@@ -84,6 +101,8 @@ function HomeProductItem({ product }) {
 }
 HomeProductItem.propTypes = {
   product: PropTypes.object.isRequired,
+  setWishlistCount: PropTypes.func,
+  setAddTpCartCount: PropTypes.func,
 };
 
 export default HomeProductItem;

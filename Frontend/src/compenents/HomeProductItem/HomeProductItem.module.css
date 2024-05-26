@@ -91,6 +91,19 @@
 .wishListHeaert:hover {
   color: #861313;
 }
+
+.addtoCardBtn {
+  position: absolute;
+  color: #ffffff;
+  bottom: 35px;
+  right: 15px;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.addtoCardBtn:hover {
+  color: #861313;
+}
 @media only screen and (max-width: 765px) {
   .productCard {
     width: 400px;

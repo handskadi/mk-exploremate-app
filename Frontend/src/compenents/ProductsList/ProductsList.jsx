@@ -2,7 +2,13 @@ import HomeProductItem from "../HomeProductItem/HomeProductItem";
 import styles from "./ProductsList.module.css";
 import PropTypes from "prop-types";
 
-function ProductsList({ products }) {
+function ProductsList({
+  products,
+  wishlistCount,
+  setWishlistCount,
+  addTpCartCount,
+  setAddTpCartCount,
+}) {
   const MAX_TOURS = 3;
   const limitedProducts = products.slice(0, MAX_TOURS);
 
@@ -13,7 +19,14 @@ function ProductsList({ products }) {
         <p>Discover Morocco with Mk ExploreMate!</p>
       </div>
       {limitedProducts.map((product, index) => (
-        <HomeProductItem product={product} key={index} />
+        <HomeProductItem
+          product={product}
+          key={index}
+          wishlistCount={wishlistCount}
+          setWishlistCount={setWishlistCount}
+          addTpCartCount={addTpCartCount}
+          setAddTpCartCount={setAddTpCartCount}
+        />
       ))}
     </div>
   );
@@ -33,6 +46,10 @@ ProductsList.propTypes = {
       image: PropTypes.string.isRequired,
     })
   ).isRequired,
+  wishlistCount: PropTypes.number,
+  setWishlistCount: PropTypes.func,
+  addTpCartCount: PropTypes.number,
+  setAddTpCartCount: PropTypes.func,
 };
 
 export default ProductsList;

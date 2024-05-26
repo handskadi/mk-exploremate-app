@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styles from "./MainNav.module.css";
+import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBasketShopping,
@@ -13,7 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
-function MainNav() {
+function MainNav({ wishlistCount, addTpCartCount }) {
   return (
     <>
       <nav className={styles.mainNav}>
@@ -74,10 +75,11 @@ function MainNav() {
           <li className={styles.shoppingTools}>
             <button>
               <FontAwesomeIcon icon={faHeart} />
+              {wishlistCount > 0 && <span>{wishlistCount}</span>}
             </button>
             <button>
               <FontAwesomeIcon icon={faBasketShopping} />
-              <span>1</span>
+              {addTpCartCount > 0 && <span>{addTpCartCount}</span>}
             </button>
             <button>
               <FontAwesomeIcon icon={faBell} />
@@ -94,4 +96,8 @@ function MainNav() {
   );
 }
 
+MainNav.propTypes = {
+  wishlistCount: PropTypes.number,
+  addTpCartCount: PropTypes.number,
+};
 export default MainNav;

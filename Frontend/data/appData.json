@@ -44,5 +44,35 @@
       "rate": "good",
       "image": "http://localhost:5173/images/tours/image4.jpg"
     }
+  ],
+  "reviews": [
+    {
+      "author": "John Doe",
+      "date": "2024-05-01",
+      "reviewTitle": "Amazing Experience!",
+      "reviewDescription": "The tour was fantastic! Our guide was knowledgeable and the itinerary was well planned. Highly recommend!",
+      "ratingScore": 5
+    },
+    {
+      "author": "Jane Smith",
+      "date": "2024-04-28",
+      "reviewTitle": "Great Service",
+      "reviewDescription": "The booking process was smooth and the customer service was excellent. The accommodation exceeded our expectations.",
+      "ratingScore": 4
+    },
+    {
+      "author": "Michael Brown",
+      "date": "2024-04-25",
+      "reviewTitle": "Good Value",
+      "reviewDescription": "We had a wonderful time. The tour was affordable and well worth the money. Would book again.",
+      "ratingScore": 3
+    },
+    {
+      "author": "David Black",
+      "date": "2024-04-20",
+      "reviewTitle": "Fantastic Adventure",
+      "reviewDescription": "One of the best experiences we've had. The locations were great and guise was super.",
+      "ratingScore": 5
+    }
   ]
 }

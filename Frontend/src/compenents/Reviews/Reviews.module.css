@@ -1,0 +1,45 @@
+.container {
+  text-align: center;
+}
+
+.reviews {
+  background: #ffffff;
+  padding-bottom: 20px;
+  padding: 20px;
+}
+
+.sectionTitle h2 {
+  padding: 20px 20px 0px 20px;
+  margin: 0;
+  text-transform: uppercase;
+  color: #665f8b;
+}
+
+.reviewCards {
+  padding: 20px 0;
+  background: #fff;
+  color: white;
+}
+
+.author {
+  color: #a9a9a9;
+}
+.reviewCard h3 {
+  margin: 0px;
+  padding: 10px 0px 10px 0px;
+  color: #023335;
+}
+.reviewCard p {
+  color: #a9a9a9;
+}
+.rate {
+  color: rgb(248, 191, 5);
+  font-size: 20px;
+}
+.date {
+  color: #739697;
+}
+.reviewCard {
+  padding: 20px 0px;
+  border-radius: 5px;
+}
