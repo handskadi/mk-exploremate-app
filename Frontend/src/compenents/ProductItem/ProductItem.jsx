@@ -7,7 +7,7 @@ import {
   faUserGroup,
   faCircleCheck,
   faListCheck,
-  faChartBar,
+  faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faCalendarCheck,
@@ -18,7 +18,7 @@ import PropTypes from "prop-types";
 import Button from "../Button/Button";
 import styles from "./ProductItem.module.css";
 
-function ProductItem({ product }) {
+function ProductItem({ product, setData }) {
   const {
     title,
     location,
@@ -30,6 +30,15 @@ function ProductItem({ product }) {
     image,
   } = product;
 
+  const deleteProduct = () => {
+    const isConfirmed = window.confirm(
+      `Are you sure you want to delete the product "${title}"?`
+    );
+    if (isConfirmed) {
+      setData((prevProducts) => prevProducts.filter((p) => p.code !== code));
+      window.alert(`The product "${title}" has been deleted.`);
+    }
+  };
   return (
     <section className={styles.product}>
       <div className={styles.productMedia}>
@@ -122,8 +131,8 @@ function ProductItem({ product }) {
         )}
       </div>
       <div className={styles.productActions}>
-        <Button type="O">
-          <FontAwesomeIcon icon={faChartBar} /> Promote
+        <Button type="O" onClick={() => deleteProduct()}>
+          <FontAwesomeIcon icon={faTrash} /> Remove
         </Button>
         <Button type="P">
           {" "}
@@ -136,6 +145,7 @@ function ProductItem({ product }) {
 
 ProductItem.propTypes = {
   product: PropTypes.object.isRequired,
+  setData: PropTypes.func,
 };
 
 export default ProductItem;

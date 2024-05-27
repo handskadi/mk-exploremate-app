@@ -5,12 +5,12 @@ import Sidebar from "../../compenents/Sidebar/Sidebar";
 import styles from "./Products.module.css";
 import PropTypes from "prop-types";
 
-function Products({ products }) {
+function Products({ products, setData }) {
   return (
     <>
       <Header />
       <div className={styles.container}>
-        <Main products={products} />
+        <Main products={products} setData={setData} />
         <Sidebar products={products} />
       </div>
       <Footer />
@@ -20,5 +20,6 @@ function Products({ products }) {
 
 Products.propTypes = {
   products: PropTypes.array.isRequired,
+  setData: PropTypes.func,
 };
 export default Products;

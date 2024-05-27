@@ -3,9 +3,15 @@ import Button from "../Button/Button";
 import ProductItem from "../ProductItem/ProductItem";
 import styles from "./Main.module.css";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
 
-function Main({ products }) {
+function Main({ products, setData }) {
+  const navigate = useNavigate();
+  const goToAddProduct = () => {
+    navigate("/add-product");
+  };
+
   return (
     <main className={styles.main}>
       <article>
@@ -20,8 +26,7 @@ function Main({ products }) {
 
         <header className={styles.mainHeader}>
           <h1>Products</h1>
-          <Button type="O">
-            {" "}
+          <Button type="O" onClick={goToAddProduct}>
             create{" "}
             <span className={styles.creatProductButton}>new product</span>{" "}
             <FontAwesomeIcon icon={faSquarePlus} />
@@ -29,7 +34,7 @@ function Main({ products }) {
         </header>
 
         {products.map((product, index) => (
-          <ProductItem product={product} key={index} />
+          <ProductItem product={product} setData={setData} key={index} />
         ))}
       </article>
     </main>
@@ -49,6 +54,7 @@ Main.propTypes = {
       image: PropTypes.string.isRequired,
     })
   ).isRequired,
+  setData: PropTypes.func,
 };
 
 export default Main;

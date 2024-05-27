@@ -6,6 +6,7 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Login from "./pages/Login/Login";
 import { useEffect, useState } from "react";
+import AddNewProduct from "./pages/AddNewProduct/AddNewProduct";
 
 function App() {
   const [data, setData] = useState([]);
@@ -44,10 +45,14 @@ function App() {
           }
         />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/products" element={<Products products={data} />} />
+        <Route
+          path="/products"
+          element={<Products products={data} setData={setData} />}
+        />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/add-product" element={<AddNewProduct />} />
       </Routes>
     </BrowserRouter>
   );
