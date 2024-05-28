@@ -86,7 +86,6 @@ function MainNav({ wishlistCount, addTpCartCount }) {
               <span>9+</span>
             </button>
           </li>
-          <li>Updates</li>
           <li>
             <NavLink to="/login">Logout</NavLink>
           </li>

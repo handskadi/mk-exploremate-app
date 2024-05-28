@@ -8,6 +8,7 @@ import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
 
 function Main({ products, setData }) {
   const navigate = useNavigate();
+
   const goToAddProduct = () => {
     navigate("/add-product");
   };
@@ -27,8 +28,7 @@ function Main({ products, setData }) {
         <header className={styles.mainHeader}>
           <h1>Products</h1>
           <Button type="O" onClick={goToAddProduct}>
-            create{" "}
-            <span className={styles.creatProductButton}>new product</span>{" "}
+            Create <span className={styles.creatProductButton}> product</span>{" "}
             <FontAwesomeIcon icon={faSquarePlus} />
           </Button>
         </header>
