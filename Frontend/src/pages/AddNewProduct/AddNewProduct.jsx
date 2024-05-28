@@ -6,6 +6,7 @@ import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+import MkIcon from "../../compenents/MkIcon/MkIcon";
 
 function AddNewProduct({ setProducts }) {
   const [step, setStep] = useState(1);
@@ -68,6 +69,8 @@ function AddNewProduct({ setProducts }) {
     status: status,
     isPrivate: true,
     image: image,
+    duration: 1,
+    rate: "good",
   };
 
   function addNewProduct(product) {
@@ -84,7 +87,11 @@ function AddNewProduct({ setProducts }) {
             {step === 3 && <h3>Let&apos;s add some content!</h3>}
             {step === 4 && <h3>Let&apos;s price your product.</h3>}
             {step === 5 && <h3>Voilà! Ready to go!</h3>}
-            {step === 6 && <h3>Well Done! Product Published!</h3>}
+            {step === 6 && (
+              <h3>
+                Well Done! <MkIcon height="50" width="50" />
+              </h3>
+            )}
             <form onSubmit={handleAddProductSubmit}>
               {step === 1 ? (
                 <div className={styles.inputContainer}>

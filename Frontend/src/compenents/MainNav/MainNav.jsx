@@ -13,6 +13,7 @@ import {
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import NotificationPanel from "../NotificationPanel/NotificationPanel";
 
 function MainNav({ wishlistCount, addTpCartCount }) {
   return (
@@ -76,6 +77,7 @@ function MainNav({ wishlistCount, addTpCartCount }) {
             <button>
               <FontAwesomeIcon icon={faHeart} />
               {wishlistCount > 0 && <span>{wishlistCount}</span>}
+              <NotificationPanel />
             </button>
             <button>
               <FontAwesomeIcon icon={faBasketShopping} />

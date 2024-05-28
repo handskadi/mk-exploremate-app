@@ -1,0 +1,37 @@
+.notificationPanel {
+  position: absolute;
+  font-size: 10px;
+  background: #fff;
+
+  width: 300px;
+  bottom: -132px;
+  right: -70px;
+  border: 1px solid rgba(0, 0, 0, 0.123);
+  cursor: default;
+
+}
+.notificationHeader {
+    background: #186b6d;
+    color: #fff;
+    padding: 5px 10px;
+}
+.notificationPanel .noticationList {
+padding: 10px;
+}
+
+.notificationPanel .notificationItem {
+display: flex;
+flex-flow: wrap row;
+justify-content: space-between;
+padding-bottom: 2px;
+color: #000;
+border-bottom: 1px solid rgba(0, 0, 0, 0.082);
+}
+.noticationText {
+  justify-self: flex-start;
+  border: 1px solid red;
+}
+.notificationPanel .notificationItem img { 
+    width: 40px;
+    padding-right: 5px;
+}
