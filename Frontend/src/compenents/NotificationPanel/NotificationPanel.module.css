@@ -2,36 +2,44 @@
   position: absolute;
   font-size: 10px;
   background: #fff;
-
   width: 300px;
-  bottom: -132px;
+  min-height: 300px;
+  bottom: -332px;
   right: -70px;
   border: 1px solid rgba(0, 0, 0, 0.123);
   cursor: default;
-
+  display: none;
+  z-index: 3;
 }
 .notificationHeader {
-    background: #186b6d;
-    color: #fff;
-    padding: 5px 10px;
+  background: #186b6d;
+  color: #fff;
+  padding: 5px 10px;
 }
-.notificationPanel .noticationList {
-padding: 10px;
+.noticationList {
+  padding: 10px;
 }
 
-.notificationPanel .notificationItem {
-display: flex;
-flex-flow: wrap row;
-justify-content: space-between;
-padding-bottom: 2px;
-color: #000;
-border-bottom: 1px solid rgba(0, 0, 0, 0.082);
+.notificationItem {
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: space-between;
+  padding-bottom: 2px;
+  color: #000;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.082);
+}
+.notificationItem img {
+  width: 40px;
+  padding-right: 5px;
+  margin-right: auto;
 }
 .noticationText {
   justify-self: flex-start;
-  border: 1px solid red;
+  text-align: left;
+  margin-right: auto;
 }
-.notificationPanel .notificationItem img { 
-    width: 40px;
-    padding-right: 5px;
+
+.notificationActionButtons {
+  margin-left: auto;
 }

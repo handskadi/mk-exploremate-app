@@ -16,6 +16,8 @@ function Home({
   addTpCartCount,
   setAddTpCartCount,
   reviews,
+  isLoggedIn,
+  setIsLoggedIn,
 }) {
   return (
     <>
@@ -24,6 +26,8 @@ function Home({
         setWishlistCount={setWishlistCount}
         addTpCartCount={addTpCartCount}
         setAddTpCartCount={setAddTpCartCount}
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
       />
       <div className={styles.container}>
         <Slider />
@@ -53,5 +57,7 @@ Home.propTypes = {
   setWishlistCount: PropTypes.func,
   addTpCartCount: PropTypes.number,
   setAddTpCartCount: PropTypes.func,
+  isLoggedIn: PropTypes.bool,
+  setIsLoggedIn: PropTypes.func,
 };
 export default Home;

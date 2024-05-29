@@ -8,6 +8,8 @@ function Header({
   setWishlistCount,
   addTpCartCount,
   setAddTpCartCount,
+  isLoggedIn,
+  setIsLoggedIn,
 }) {
   return (
     <header className={styles.header}>
@@ -17,6 +19,8 @@ function Header({
         setWishlistCount={setWishlistCount}
         addTpCartCount={addTpCartCount}
         setAddTpCartCount={setAddTpCartCount}
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
       />
     </header>
   );
@@ -25,6 +29,8 @@ function Header({
 Header.propTypes = {
   wishlistCount: PropTypes.number,
   setWishlistCount: PropTypes.func,
+  setIsLoggedIn: PropTypes.func,
+  isLoggedIn: PropTypes.bool,
   addTpCartCount: PropTypes.number,
   setAddTpCartCount: PropTypes.func,
 };

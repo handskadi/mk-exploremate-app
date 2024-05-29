@@ -11,8 +11,11 @@ import AddNewProduct from "./pages/AddNewProduct/AddNewProduct";
 function App() {
   const [data, setData] = useState([]);
   const [reviews, setReviews] = useState([]);
+  // const [wishListProducts, setWishListProducts] = useState([]);
+  // const [cartProducts, setCartProducts] = useState([]);
   const [wishlistCount, setWishlistCount] = useState(0);
   const [addTpCartCount, setAddTpCartCount] = useState(0);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   useEffect(() => {
     fetch("http://localhost:8000/tours")
@@ -35,8 +38,55 @@ function App() {
           index
           element={
             <Home
-              products={data}
               reviews={reviews}
+              products={data}
+              wishlistCount={wishlistCount}
+              setWishlistCount={setWishlistCount}
+              addTpCartCount={addTpCartCount}
+              setAddTpCartCount={setAddTpCartCount}
+              isLoggedIn={isLoggedIn}
+              setIsLoggedIn={setIsLoggedIn}
+            />
+          }
+        />
+        <Route
+          path="/dashboard"
+          element={
+            <Dashboard
+              products={data}
+              wishlistCount={wishlistCount}
+              setWishlistCount={setWishlistCount}
+              addTpCartCount={addTpCartCount}
+              setAddTpCartCount={setAddTpCartCount}
+              isLoggedIn={isLoggedIn}
+              setIsLoggedIn={setIsLoggedIn}
+            />
+          }
+        />
+        <Route
+          path="/products"
+          element={
+            <Products
+              products={data}
+              setData={setData}
+              wishlistCount={wishlistCount}
+              setWishlistCount={setWishlistCount}
+              addTpCartCount={addTpCartCount}
+              setAddTpCartCount={setAddTpCartCount}
+              isLoggedIn={isLoggedIn}
+              setIsLoggedIn={setIsLoggedIn}
+            />
+          }
+        />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route
+          path="/login"
+          element={
+            <Login
+              isLoggedIn={isLoggedIn}
+              setIsLoggedIn={setIsLoggedIn}
+              products={data}
               wishlistCount={wishlistCount}
               setWishlistCount={setWishlistCount}
               addTpCartCount={addTpCartCount}
@@ -44,17 +94,20 @@ function App() {
             />
           }
         />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route
-          path="/products"
-          element={<Products products={data} setData={setData} />}
-        />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
         <Route
           path="/add-product"
-          element={<AddNewProduct setProducts={setData} />}
+          element={
+            <AddNewProduct
+              setProducts={setData}
+              products={data}
+              wishlistCount={wishlistCount}
+              setWishlistCount={setWishlistCount}
+              addTpCartCount={addTpCartCount}
+              setAddTpCartCount={setAddTpCartCount}
+              isLoggedIn={isLoggedIn}
+              setIsLoggedIn={setIsLoggedIn}
+            />
+          }
         />
       </Routes>
     </BrowserRouter>
