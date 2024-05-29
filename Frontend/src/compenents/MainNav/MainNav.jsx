@@ -16,8 +16,12 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import NotificationPanel from "../NotificationPanel/NotificationPanel";
 import { useState } from "react";
 
-function MainNav({ wishlistCount, addTpCartCount, isLoggedIn }) {
+function MainNav({ wishlistCount, addTpCartCount, isLoggedIn, setIsLoggedIn }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  function handleLogout(){
+    setIsLoggedIn(false)
+  }
   return (
     <>
       <nav className={styles.mainNav}>
@@ -67,15 +71,16 @@ function MainNav({ wishlistCount, addTpCartCount, isLoggedIn }) {
               <span className={styles.text}>Contact</span>
             </NavLink>
           </li>
-
+          {!isLoggedIn ?  
           <li>
             <NavLink to="/login">
               <span className={styles.icon}>
                 <FontAwesomeIcon icon={faRightFromBracket} />
               </span>
-              <span className={styles.text}>logout</span>
+              <span className={styles.text}>Login</span>
             </NavLink>
           </li>
+          : <li><button onClick={handleLogout} className={styles.logoutBtn}>Logout</button></li> }
         </ul>
       </nav>
       <div className={styles.rightNav}>
@@ -99,9 +104,9 @@ function MainNav({ wishlistCount, addTpCartCount, isLoggedIn }) {
               <span>9+</span>
             </button>
           </li>
-          <li>
+          {/* <li>
             <NavLink to="/login">{isLoggedIn ? "logout" : "Login"}</NavLink>
-          </li>
+          </li> */}
         </ul>
       </div>
     </>

@@ -15,7 +15,7 @@ function App() {
   // const [cartProducts, setCartProducts] = useState([]);
   const [wishlistCount, setWishlistCount] = useState(0);
   const [addTpCartCount, setAddTpCartCount] = useState(0);
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:8000/tours")
@@ -34,6 +34,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        
         <Route
           index
           element={
@@ -49,6 +50,7 @@ function App() {
             />
           }
         />
+
         <Route
           path="/dashboard"
           element={
@@ -62,7 +64,8 @@ function App() {
               setIsLoggedIn={setIsLoggedIn}
             />
           }
-        />
+        /> 
+
         <Route
           path="/products"
           element={
@@ -78,8 +81,22 @@ function App() {
             />
           }
         />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About  products={data}
+              wishlistCount={wishlistCount}
+              setWishlistCount={setWishlistCount}
+              addTpCartCount={addTpCartCount}
+              setAddTpCartCount={setAddTpCartCount}
+              isLoggedIn={isLoggedIn}
+              setIsLoggedIn={setIsLoggedIn}/>} 
+              />
+        <Route path="/contact" element={<Contact  products={data}
+              wishlistCount={wishlistCount}
+              setWishlistCount={setWishlistCount}
+              addTpCartCount={addTpCartCount}
+              setAddTpCartCount={setAddTpCartCount}
+              isLoggedIn={isLoggedIn}
+              setIsLoggedIn={setIsLoggedIn}/>} 
+              />
         <Route
           path="/login"
           element={

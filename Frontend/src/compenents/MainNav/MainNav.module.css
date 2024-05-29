@@ -56,7 +56,18 @@
   left: 20px;
 }
 
-/* Wishlist panel*/
+/* Loggin Btn */
+.logoutBtn  {
+  background-color: #fff;
+  border: 1px solid #115152;
+  color: #115152;
+  border-radius: 5px;
+}
+.logoutBtn:hover {
+  color: #fff;
+  border: 1px solid #115152;
+  background-color: #115152;
+}
 
 
 @media only screen and (max-width: 765px) {

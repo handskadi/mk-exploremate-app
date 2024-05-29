@@ -5,10 +5,16 @@ import Sidebar from "../../compenents/Sidebar/Sidebar";
 import styles from "./Products.module.css";
 import PropTypes from "prop-types";
 
-function Products({ products, setData }) {
+function Products({ products, setData, wishlistCount, setWishlistCount, addTpCartCount, setAddTpCartCount,  isLoggedIn , setIsLoggedIn }) {
   return (
     <>
-      <Header />
+      <Header 
+      wishlistCount={wishlistCount}
+        setWishlistCount={setWishlistCount}
+        addTpCartCount={addTpCartCount}
+        setAddTpCartCount={setAddTpCartCount}
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}/>
       <div className={styles.container}>
         <Main products={products} setData={setData} />
         <Sidebar products={products} />
@@ -19,7 +25,13 @@ function Products({ products, setData }) {
 }
 
 Products.propTypes = {
-  products: PropTypes.array.isRequired,
+  products: PropTypes.array,
   setData: PropTypes.func,
+  wishlistCount: PropTypes.number,
+  setWishlistCount: PropTypes.func,
+  addTpCartCount: PropTypes.number,
+  setAddTpCartCount: PropTypes.func,
+  isLoggedIn: PropTypes.bool,
+  setIsLoggedIn: PropTypes.func,
 };
 export default Products;
