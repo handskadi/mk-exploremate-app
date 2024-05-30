@@ -10,6 +10,8 @@ function Dashboard({ dispatch, state }) {
   if (!state.isLoggedIn) {
     navigate("/login");
   }
+  const { tours } = state;
+
   return (
     <>
       <Header state={state} dispatch={dispatch} />
@@ -84,15 +86,21 @@ element.style {
             <h3>Statistics</h3>
             <div className={styles.statCards}>
               <div className={styles.statCard}>
-                <p className={styles.statValue}>12</p>
+                <p className={styles.statValue}>
+                  {countProductsByStatus(tours, "active")}
+                </p>
                 <p className={styles.statLabel}>Active Products</p>
               </div>
               <div className={styles.statCard}>
-                <p className={styles.statValue}>3</p>
+                <p className={styles.statValue}>
+                  {countProductsByStatus(tours, "inactive")}
+                </p>
                 <p className={styles.statLabel}>Inactive Products</p>
               </div>
               <div className={styles.statCard}>
-                <p className={styles.statValue}>5</p>
+                <p className={styles.statValue}>
+                  {countProductsByStatus(tours, "pause")}
+                </p>
                 <p className={styles.statLabel}>Paused Products</p>
               </div>
             </div>
@@ -122,8 +130,13 @@ element.style {
   );
 }
 
+const countProductsByStatus = (products, status) => {
+  return products.filter((product) => product.status === status).length;
+};
+
 Dashboard.propTypes = {
   dispatch: PropTypes.func,
   state: PropTypes.object,
 };
+
 export default Dashboard;
