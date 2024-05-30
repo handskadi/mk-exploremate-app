@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Footer from "../../compenents/Footer/Footer";
 import Header from "../../compenents/Header/Header";
-import styles from "./Login.module.css"
+import styles from "./Login.module.css";
 import PropTypes from "prop-types";
 import Button from "../../compenents/Button/Button";
 import { useNavigate } from "react-router-dom";
@@ -9,37 +9,39 @@ import { useNavigate } from "react-router-dom";
 const LOGINEMAIL = "alx@swe.com";
 const LOGINPASSWORD = "alx123";
 
-function Login({ isLoggedIn, setIsLoggedIn }) {
+function Login({ dispatch, state }) {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const navigate = useNavigate();
 
-  function handleLoginSubmit(e){
-    e.preventDefault()
+  function handleLoginSubmit(e) {
+    e.preventDefault();
     if (loginEmail === LOGINEMAIL && loginPassword === LOGINPASSWORD) {
-        setIsLoggedIn(true)
-        navigate("/dashboard");
+      dispatch({ type: "login" });
+      navigate("/dashboard");
     }
   }
 
-
   return (
     <>
-      <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+      <Header state={state} dispatch={dispatch} />
       <div className={styles.container}>
         <div className={styles.loginContainer}>
-        <form onSubmit={handleLoginSubmit}>
+          <form onSubmit={handleLoginSubmit}>
             <label>Your email</label>
-          <input type="email" value={loginEmail} onChange={(e)=>setLoginEmail(e.target.value)} />
-          <label>Your password</label>
-          <input 
-              type="password" 
-              value={loginPassword} 
-              onChange={(e)=>setLoginPassword(e.target.value)}
-          />
-          <Button> Login</Button>
-        </form>
-
+            <input
+              type="email"
+              value={loginEmail}
+              onChange={(e) => setLoginEmail(e.target.value)}
+            />
+            <label>Your password</label>
+            <input
+              type="password"
+              value={loginPassword}
+              onChange={(e) => setLoginPassword(e.target.value)}
+            />
+            <Button> Login</Button>
+          </form>
         </div>
       </div>
       <Footer />
@@ -48,8 +50,8 @@ function Login({ isLoggedIn, setIsLoggedIn }) {
 }
 
 Login.propTypes = {
-  isLoggedIn: PropTypes.bool,
-  setIsLoggedIn: PropTypes.fun,
+  dispatch: PropTypes.func,
+  state: PropTypes.object,
 };
 
 export default Login;

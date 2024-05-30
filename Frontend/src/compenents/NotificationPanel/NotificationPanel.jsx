@@ -15,9 +15,31 @@ function NotificationPanel({ isOpen }) {
           <img src="http://localhost:5173/images/tours/image2.jpg" alt="#" />
           <div className={styles.noticationText}>
             <h3>Marrakech to Merzouga </h3>
+            <p>
+              <strong>Code:</strong> 2MK3456
+            </p>
           </div>
           <div className={styles.notificationActionButtons}>
-            <button>x</button>
+            <div className={styles.closeBtn}>x</div>
+          </div>
+        </div>
+        <div className={styles.notificationItem}>
+          <img src="http://localhost:5173/images/tours/image2.jpg" alt="#" />
+          <div className={styles.noticationText}>
+            <h3>Marrakech to Merzouga </h3>
+            <p>
+              <strong>Code:</strong> 2MK3456
+            </p>
+          </div>
+          <div className={styles.notificationActionButtons}>
+            <div
+              className={styles.closeBtn}
+              onClick={() => {
+                alert("Close me");
+              }}
+            >
+              x
+            </div>
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import MkIcon from "../../compenents/MkIcon/MkIcon";
 
-function AddNewProduct({ setProducts }) {
+function AddNewProduct({ dispatch, state }) {
   const [step, setStep] = useState(1);
   const [productType, setProductType] = useState("tour");
   const [title, setTitle] = useState("");
@@ -21,6 +21,7 @@ function AddNewProduct({ setProducts }) {
   const [image, setImage] = useState(
     "http://localhost:5173/images/tours/default.png"
   );
+  const navigate = useNavigate();
   () => {
     setImage();
   };
@@ -33,10 +34,30 @@ function AddNewProduct({ setProducts }) {
     e.preventDefault();
     if (step > 1) setStep((s) => s - 1);
   }
+
   function handleAddProductSubmit(e) {
     e.preventDefault();
-    addNewProduct(newProduct);
+    const newProduct = {
+      id: `a24ce40f-262c-412f-bb92-cb2d820139e3-${Date.now()}`,
+      productType,
+      title,
+      excerpt,
+      location,
+      code: `code-${Date.now()}`,
+      status,
+      isPrivate,
+      image,
+      duration: 1,
+      rate: "good",
+    };
+
+    dispatch({ type: "addProduct", payload: { product: newProduct } });
     console.log(newProduct);
+    resetForm();
+    setStep(6);
+  }
+
+  function resetForm() {
     setProductType("tour");
     setTitle("");
     setExcerpt("");
@@ -45,10 +66,7 @@ function AddNewProduct({ setProducts }) {
     setIsPrivate(true);
     setPrice(0);
     setCurrency("EUR");
-    setStep((s) => s + 1);
   }
-
-  const navigate = useNavigate();
 
   function goProducts(e) {
     e.preventDefault();
@@ -56,29 +74,12 @@ function AddNewProduct({ setProducts }) {
     setStep(1);
   }
 
-  const longId = "a24ce40f-262c-412f-bb92-cb2d820139e3";
-  const shortId = longId.slice(0, 8);
+  // const longId = "a24ce40f-262c-412f-bb92-cb2d820139e3";
+  // const shortId = longId.slice(0, 8);
 
-  const newProduct = {
-    id: longId,
-    productType: productType,
-    title: title,
-    excerpt: excerpt,
-    location: location,
-    code: shortId,
-    status: status,
-    isPrivate: true,
-    image: image,
-    duration: 1,
-    rate: "good",
-  };
-
-  function addNewProduct(product) {
-    setProducts((products) => [...products, product]);
-  }
   return (
     <>
-      <Header />
+      <Header dispatch={dispatch} state={state} />
       <div className={styles.container}>
         <main className={styles.main}>
           <div className={styles.addProductForm}>
@@ -303,6 +304,7 @@ function AddNewProduct({ setProducts }) {
 }
 
 AddNewProduct.propTypes = {
-  setProducts: PropTypes.func,
+  dispatch: PropTypes.func,
+  state: PropTypes.object,
 };
 export default AddNewProduct;

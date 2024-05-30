@@ -9,40 +9,18 @@ import TopDestination from "../../compenents/TopDestination/TopDestination";
 import HomeFeatures from "../../compenents/HomeFeatures/HomeFeatures";
 import Reviews from "../../compenents/Reviews/Reviews";
 import HomeFooterDetails from "../../compenents/HomeFooterDetails/HomeFooterDetails";
-function Home({
-  products,
-  wishlistCount,
-  setWishlistCount,
-  addTpCartCount,
-  setAddTpCartCount,
-  reviews,
-  isLoggedIn,
-  setIsLoggedIn,
-}) {
+function Home({ dispatch, state }) {
   return (
     <>
-      <Header
-        wishlistCount={wishlistCount}
-        setWishlistCount={setWishlistCount}
-        addTpCartCount={addTpCartCount}
-        setAddTpCartCount={setAddTpCartCount}
-        isLoggedIn={isLoggedIn}
-        setIsLoggedIn={setIsLoggedIn}
-      />
+      <Header dispatch={dispatch} state={state} />
       <div className={styles.container}>
         <Slider />
         <HomeFeatures />
 
         <TopDestination />
         <CallToAction />
-        <ProductsList
-          products={products}
-          wishlistCount={wishlistCount}
-          setWishlistCount={setWishlistCount}
-          addTpCartCount={addTpCartCount}
-          setAddTpCartCount={setAddTpCartCount}
-        />
-        <Reviews reviews={reviews} />
+        <ProductsList dispatch={dispatch} state={state} />
+        <Reviews state={state} />
         <HomeFooterDetails />
       </div>
       <Footer />
@@ -51,13 +29,7 @@ function Home({
 }
 
 Home.propTypes = {
-  products: PropTypes.array.isRequired,
-  reviews: PropTypes.array.isRequired,
-  wishlistCount: PropTypes.number,
-  setWishlistCount: PropTypes.func,
-  addTpCartCount: PropTypes.number,
-  setAddTpCartCount: PropTypes.func,
-  isLoggedIn: PropTypes.bool,
-  setIsLoggedIn: PropTypes.func,
+  dispatch: PropTypes.func,
+  state: PropTypes.object,
 };
 export default Home;

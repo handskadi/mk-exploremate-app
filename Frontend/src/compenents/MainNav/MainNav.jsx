@@ -16,12 +16,9 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import NotificationPanel from "../NotificationPanel/NotificationPanel";
 import { useState } from "react";
 
-function MainNav({ wishlistCount, addTpCartCount, isLoggedIn, setIsLoggedIn }) {
+function MainNav({ dispatch, state }) {
   const [isOpen, setIsOpen] = useState(false);
-
-  function handleLogout(){
-    setIsLoggedIn(false)
-  }
+  const { isLoggedIn, addToCartCount, wishListCount } = state;
   return (
     <>
       <nav className={styles.mainNav}>
@@ -71,16 +68,22 @@ function MainNav({ wishlistCount, addTpCartCount, isLoggedIn, setIsLoggedIn }) {
               <span className={styles.text}>Contact</span>
             </NavLink>
           </li>
-          {!isLoggedIn ?  
+
           <li>
-            <NavLink to="/login">
-              <span className={styles.icon}>
-                <FontAwesomeIcon icon={faRightFromBracket} />
-              </span>
-              <span className={styles.text}>Login</span>
-            </NavLink>
+            {!isLoggedIn && (
+              <NavLink to="/login">
+                <span className={styles.icon}>
+                  <FontAwesomeIcon icon={faRightFromBracket} />
+                </span>
+                <span className={styles.text}>Login</span>
+              </NavLink>
+            )}
+            {isLoggedIn && (
+              <button onClick={() => dispatch({ type: "logout" })}>
+                Logout
+              </button>
+            )}
           </li>
-          : <li><button onClick={handleLogout} className={styles.logoutBtn}>Logout</button></li> }
         </ul>
       </nav>
       <div className={styles.rightNav}>
@@ -88,25 +91,22 @@ function MainNav({ wishlistCount, addTpCartCount, isLoggedIn, setIsLoggedIn }) {
           <li className={styles.shoppingTools}>
             <button
               onClick={() => {
-                if (wishlistCount > 0) setIsOpen(!isOpen);
+                if (wishListCount > 0) setIsOpen(!isOpen);
               }}
             >
               <FontAwesomeIcon icon={faHeart} />
-              {wishlistCount > 0 && <span>{wishlistCount}</span>}
+              {wishListCount > 0 && <span>{wishListCount}</span>}
               <NotificationPanel isOpen={isOpen} setIsOpen={setIsOpen} />
             </button>
             <button>
               <FontAwesomeIcon icon={faBasketShopping} />
-              {addTpCartCount > 0 && <span>{addTpCartCount}</span>}
+              {addToCartCount > 0 && <span>{addToCartCount}</span>}
             </button>
             <button>
               <FontAwesomeIcon icon={faBell} />
               <span>9+</span>
             </button>
           </li>
-          {/* <li>
-            <NavLink to="/login">{isLoggedIn ? "logout" : "Login"}</NavLink>
-          </li> */}
         </ul>
       </div>
     </>
@@ -114,9 +114,7 @@ function MainNav({ wishlistCount, addTpCartCount, isLoggedIn, setIsLoggedIn }) {
 }
 
 MainNav.propTypes = {
-  wishlistCount: PropTypes.number,
-  addTpCartCount: PropTypes.number,
-  isLoggedIn: PropTypes.bool,
-  setIsLoggedIn: PropTypes.func,
+  state: PropTypes.object,
+  dispatch: PropTypes.func,
 };
 export default MainNav;

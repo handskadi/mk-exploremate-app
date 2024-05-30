@@ -15,7 +15,7 @@ import styles from "./HomeProductItem.module.css";
 import Button from "./../Button/Button";
 import { useState } from "react";
 
-function HomeProductItem({ product, setWishlistCount, setAddTpCartCount }) {
+function HomeProductItem({ product, dispatch }) {
   const [isAddedToWishList, SetIsAddedToWishList] = useState(false);
   const [isAddedtoCart, setIsAddedToCart] = useState(false);
 
@@ -46,8 +46,8 @@ function HomeProductItem({ product, setWishlistCount, setAddTpCartCount }) {
           onClick={() => {
             SetIsAddedToWishList(!isAddedToWishList);
             !isAddedToWishList
-              ? setWishlistCount((w) => w + 1)
-              : setWishlistCount((w) => w - 1);
+              ? dispatch({ type: "addToWishList" })
+              : dispatch({ type: "removeFromWishList" });
           }}
         >
           {isAddedToWishList ? (
@@ -85,8 +85,8 @@ function HomeProductItem({ product, setWishlistCount, setAddTpCartCount }) {
           onClick={() => {
             setIsAddedToCart(!isAddedtoCart);
             !isAddedtoCart
-              ? setAddTpCartCount((a) => a + 1)
-              : setAddTpCartCount((a) => a - 1);
+              ? dispatch({ type: "addToCart" })
+              : dispatch({ type: "removeFromCart" });
           }}
           bgColor={isAddedtoCart ? "#979797" : "#186b6d"}
         >
@@ -102,7 +102,7 @@ function HomeProductItem({ product, setWishlistCount, setAddTpCartCount }) {
 HomeProductItem.propTypes = {
   product: PropTypes.object.isRequired,
   setWishlistCount: PropTypes.func,
-  setAddTpCartCount: PropTypes.func,
+  dispatch: PropTypes.func,
 };
 
 export default HomeProductItem;

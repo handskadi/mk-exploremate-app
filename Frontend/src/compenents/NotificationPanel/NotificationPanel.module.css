@@ -10,6 +10,8 @@
   cursor: default;
   display: none;
   z-index: 3;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 .notificationHeader {
   background: #186b6d;
@@ -29,6 +31,10 @@
   align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.082);
 }
+
+.notificationItem:hover {
+  background: rgb(247, 247, 247);
+}
 .notificationItem img {
   width: 40px;
   padding-right: 5px;
@@ -39,7 +45,29 @@
   text-align: left;
   margin-right: auto;
 }
-
+.noticationText p {
+  margin-top: 0;
+  padding-top: 0;
+  color: rgb(136, 134, 134);
+}
+.noticationText h3 {
+  margin-bottom: 0;
+  padding-bottom: 2px;
+}
 .notificationActionButtons {
   margin-left: auto;
+}
+
+.closeBtn {
+  padding: 2px 5px;
+  font-size: 8px;
+  cursor: pointer;
+  color: #000;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 50%;
+  font-weight: 900;
+}
+.closeBtn:hover {
+  background: darkred;
+  color: #fff;
 }

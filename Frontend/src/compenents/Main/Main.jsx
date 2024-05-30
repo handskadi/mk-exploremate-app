@@ -6,7 +6,8 @@ import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
 
-function Main({ products, setData }) {
+function Main({ dispatch, state }) {
+  const { tours } = state;
   const navigate = useNavigate();
 
   const goToAddProduct = () => {
@@ -33,8 +34,8 @@ function Main({ products, setData }) {
           </Button>
         </header>
 
-        {products.map((product, index) => (
-          <ProductItem product={product} setData={setData} key={index} />
+        {tours.map((product, index) => (
+          <ProductItem product={product} dispatch={dispatch} key={index} />
         ))}
       </article>
     </main>
@@ -42,19 +43,8 @@ function Main({ products, setData }) {
 }
 
 Main.propTypes = {
-  products: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      duration: PropTypes.number.isRequired,
-      location: PropTypes.string.isRequired,
-      code: PropTypes.string.isRequired,
-      status: PropTypes.string.isRequired,
-      isPrivateTour: PropTypes.bool.isRequired,
-      rate: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-  setData: PropTypes.func,
+  dispatch: PropTypes.func,
+  state: PropTypes.object,
 };
 
 export default Main;

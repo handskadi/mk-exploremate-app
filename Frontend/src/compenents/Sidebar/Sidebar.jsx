@@ -9,13 +9,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faHandPointLeft } from "@fortawesome/free-regular-svg-icons";
 
-function Sidebar({ products }) {
+function Sidebar({ state }) {
+  const { tours } = state;
   return (
     <aside className={styles.aside}>
       <ul className={styles.productStats}>
         <li className={styles.productStatsMain}>
           <FontAwesomeIcon icon={faFontAwesome} />
-          <span>{products.length} items</span>{" "}
+          <span>{tours.length} items</span>{" "}
           <FontAwesomeIcon icon={faHandPointLeft} />
         </li>
         <li>
@@ -24,7 +25,7 @@ function Sidebar({ products }) {
             className={styles.primaryColor}
           />
           Active:
-          <span>{countProductsByStatus(products, "active")}</span>
+          <span>{countProductsByStatus(tours, "active")}</span>
         </li>
         <li>
           <FontAwesomeIcon
@@ -32,30 +33,19 @@ function Sidebar({ products }) {
             className={styles.dangerColor}
           />
           Inactive:
-          <span>{countProductsByStatus(products, "inactive")}</span>
+          <span>{countProductsByStatus(tours, "inactive")}</span>
         </li>
         <li>
           <FontAwesomeIcon icon={faCirclePause} className={styles.evenColor} />
           Paused:
-          <span>{countProductsByStatus(products, "pause")}</span>
+          <span>{countProductsByStatus(tours, "pause")}</span>
         </li>
       </ul>
     </aside>
   );
 }
 Sidebar.propTypes = {
-  products: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      duration: PropTypes.number.isRequired,
-      location: PropTypes.string.isRequired,
-      code: PropTypes.string.isRequired,
-      status: PropTypes.string.isRequired,
-      isPrivateTour: PropTypes.bool.isRequired,
-      rate: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
-    })
-  ).isRequired,
+  state: PropTypes.object,
 };
 
 const countProductsByStatus = (products, status) => {

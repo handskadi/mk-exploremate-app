@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as faStarEmpty } from "@fortawesome/free-regular-svg-icons";
 
-function Reviews({ reviews }) {
-  console.log(reviews);
+function Reviews({ state }) {
+  const { reviews } = state;
   return (
     <div className={styles.container}>
       <div className={styles.reviews}>
@@ -92,8 +92,9 @@ function Review({ review }) {
 }
 
 Reviews.propTypes = {
-  reviews: PropTypes.array,
+  state: PropTypes.object,
 };
+
 Review.propTypes = {
   review: PropTypes.object,
 };

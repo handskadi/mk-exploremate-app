@@ -18,7 +18,7 @@ import PropTypes from "prop-types";
 import Button from "../Button/Button";
 import styles from "./ProductItem.module.css";
 
-function ProductItem({ product, setData }) {
+function ProductItem({ product, dispatch }) {
   const {
     title,
     location,
@@ -35,7 +35,7 @@ function ProductItem({ product, setData }) {
       `Are you sure you want to delete the product "${title}"?`
     );
     if (isConfirmed) {
-      setData((prevProducts) => prevProducts.filter((p) => p.code !== code));
+      dispatch({ type: "deleteProduct", payload: { code } });
       window.alert(`The product "${title}" has been deleted.`);
     }
   };
@@ -145,7 +145,7 @@ function ProductItem({ product, setData }) {
 
 ProductItem.propTypes = {
   product: PropTypes.object.isRequired,
-  setData: PropTypes.func,
+  dispatch: PropTypes.func,
 };
 
 export default ProductItem;
