@@ -21,7 +21,12 @@ function AddNewProduct({ dispatch, state }) {
   const [image, setImage] = useState(
     "http://localhost:5173/images/tours/default.png"
   );
+
   const navigate = useNavigate();
+  if (!state.isLoggedIn) {
+    navigate("/login");
+  }
+
   () => {
     setImage();
   };

@@ -4,8 +4,14 @@ import Main from "../../compenents/Main/Main";
 import Sidebar from "../../compenents/Sidebar/Sidebar";
 import styles from "./Products.module.css";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 function Products({ dispatch, state }) {
+  const navigate = useNavigate();
+  if (!state.isLoggedIn) {
+    navigate("/login");
+  }
+
   return (
     <>
       <Header state={state} dispatch={dispatch} />

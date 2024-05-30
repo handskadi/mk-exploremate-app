@@ -14,7 +14,7 @@ function Home({ dispatch, state }) {
     <>
       <Header dispatch={dispatch} state={state} />
       <div className={styles.container}>
-        <Slider />
+        <Slider state={state} />
         <HomeFeatures />
 
         <TopDestination />
