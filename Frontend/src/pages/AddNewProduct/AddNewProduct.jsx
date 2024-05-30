@@ -94,9 +94,16 @@ function AddNewProduct({ dispatch, state }) {
             {step === 4 && <h3>Let&apos;s price your product.</h3>}
             {step === 5 && <h3>Voilà! Ready to go!</h3>}
             {step === 6 && (
-              <h3>
-                Well Done! <MkIcon height="50" width="50" />
-              </h3>
+              <>
+                <div className={styles.suceessAdd}>
+                  <MkIcon height="50" width="50" />
+
+                  <div>
+                    <h3>Well Done!</h3>
+                    <span>Get Ready for new Bookings!</span>
+                  </div>
+                </div>
+              </>
             )}
             <form onSubmit={handleAddProductSubmit}>
               {step === 1 ? (

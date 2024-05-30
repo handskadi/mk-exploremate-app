@@ -229,6 +229,21 @@ option {
   color: #fff;
   cursor: pointer;
 }
+.suceessAdd {
+  border: #186b6d 2 dashed;
+  color: hsl(218, 4%, 45%);
+  display: flex;
+}
+.suceessAdd h3 {
+  color: #186b6d;
+  font-size: 24px;
+  font-weight: bolder;
+  margin: 0;
+}
+.suceessAdd span {
+  display: block;
+  padding-left: 20px;
+}
 @media only screen and (max-width: 1071px) {
   .container {
     grid-template-columns: 2fr 1fr;

@@ -44,7 +44,7 @@ function reducer(state, action) {
 
 function App() {
   const intiatState = {
-    isLoggedIn: false,
+    isLoggedIn: true,
     addToCartCount: 0,
     isAddedToCart: false,
     wishListCount: 0,
