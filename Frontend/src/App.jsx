@@ -10,10 +10,18 @@ import AddNewProduct from "./pages/AddNewProduct/AddNewProduct";
 
 function reducer(state, action) {
   switch (action.type) {
+    case "usersReceived":
+      return { ...state, users: action.payload };
+    case "toursReceived":
+      return { ...state, tours: action.payload };
+    case "reviewsReceived":
+      return { ...state, reviews: action.payload };
     case "login":
       return { ...state, isLoggedIn: true };
     case "logout":
       return { ...state, isLoggedIn: false };
+    case "loggedInUser":
+      return { ...state, loggedInUser: action.payload };
     case "addToCart":
       return { ...state, addToCartCount: state.addToCartCount + 1 };
     case "removeFromCart":
@@ -22,10 +30,6 @@ function reducer(state, action) {
       return { ...state, wishListCount: state.wishListCount + 1 };
     case "removeFromWishList":
       return { ...state, wishListCount: state.wishListCount - 1 };
-    case "toursReceived":
-      return { ...state, tours: action.payload };
-    case "reviewsReceived":
-      return { ...state, reviews: action.payload };
     case "deleteProduct":
       return {
         ...state,
@@ -37,6 +41,20 @@ function reducer(state, action) {
         tours: [...state.tours, action.payload.product],
       };
 
+    case "productAddedToWishList":
+      return {
+        ...state,
+        productsInWishList: [...state.productsInWishList, action.payload],
+      };
+    case "productToRemovedFromWishList":
+      return {
+        ...state,
+        productsInWishList: state.productsInWishList.filter(
+          (product) => product.code !== action.payload.code
+        ),
+        // productsInWishList: [...state.productsInWishList, action.payload],
+      };
+
     default:
       throw new Error(`Unknown action: ${action.type}`);
   }
@@ -44,12 +62,15 @@ function reducer(state, action) {
 
 function App() {
   const intiatState = {
-    isLoggedIn: true,
+    isLoggedIn: false,
     addToCartCount: 0,
     isAddedToCart: false,
     wishListCount: 0,
     tours: [],
     reviews: [],
+    users: [],
+    loggedInUser: {},
+    productsInWishList: [],
   };
 
   // const [cartProducts, setCartProducts] = useState([]);
@@ -71,6 +92,12 @@ function App() {
       .catch((error) => console.error("Error fetching reviews data:", error));
   }, []);
 
+  useEffect(() => {
+    fetch("http://localhost:8000/users")
+      .then((response) => response.json())
+      .then((users) => dispatch({ type: "usersReceived", payload: users }))
+      .catch((error) => console.error("Error fetching users data:", error));
+  }, []);
   return (
     <BrowserRouter>
       <Routes>

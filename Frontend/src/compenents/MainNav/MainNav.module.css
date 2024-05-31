@@ -4,6 +4,7 @@
   display: flex;
   list-style: none;
   color: hsl(218, 4%, 30%);
+  align-items: center;
 }
 
 .mainNav ul li,
@@ -57,7 +58,7 @@
 }
 
 /* Loggin Btn */
-.logoutBtn  {
+.logoutBtn {
   background-color: #fff;
   border: 1px solid #115152;
   color: #115152;
@@ -68,7 +69,38 @@
   border: 1px solid #115152;
   background-color: #115152;
 }
+/* Login Action Btn */
+.loginContainer {
+  display: flex;
+  position: relative;
+}
+.loginContainer img {
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
 
+.loginActionsBtn {
+  position: absolute;
+  top: 50px;
+}
+
+.loginActionsBtn button {
+  background: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  padding-bottom: 3px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  margin-bottom: 2px;
+  font-size: 12px;
+  border-radius: 2px;
+}
+.loginActionsBtn button:hover {
+  background: rgb(255, 255, 255);
+  background: rgb(24 107 109);
+  color: #fff;
+}
 
 @media only screen and (max-width: 765px) {
   .mainNav ul,

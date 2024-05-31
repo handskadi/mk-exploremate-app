@@ -10,13 +10,13 @@ import {
 import { faHandPointLeft } from "@fortawesome/free-regular-svg-icons";
 
 function Sidebar({ state }) {
-  const { tours } = state;
+  const { tours, loggedInUser } = state;
   return (
     <aside className={styles.aside}>
       <ul className={styles.productStats}>
         <li className={styles.productStatsMain}>
           <FontAwesomeIcon icon={faFontAwesome} />
-          <span>{tours.length} items</span>{" "}
+          <span>{countAllProducts(tours, loggedInUser)} items</span>{" "}
           <FontAwesomeIcon icon={faHandPointLeft} />
         </li>
         <li>
@@ -25,7 +25,7 @@ function Sidebar({ state }) {
             className={styles.primaryColor}
           />
           Active:
-          <span>{countProductsByStatus(tours, "active")}</span>
+          <span>{countProductsByStatus(tours, "active", loggedInUser)}</span>
         </li>
         <li>
           <FontAwesomeIcon
@@ -33,12 +33,12 @@ function Sidebar({ state }) {
             className={styles.dangerColor}
           />
           Inactive:
-          <span>{countProductsByStatus(tours, "inactive")}</span>
+          <span>{countProductsByStatus(tours, "inactive", loggedInUser)}</span>
         </li>
         <li>
           <FontAwesomeIcon icon={faCirclePause} className={styles.evenColor} />
           Paused:
-          <span>{countProductsByStatus(tours, "pause")}</span>
+          <span>{countProductsByStatus(tours, "pause", loggedInUser)}</span>
         </li>
       </ul>
     </aside>
@@ -48,7 +48,14 @@ Sidebar.propTypes = {
   state: PropTypes.object,
 };
 
-const countProductsByStatus = (products, status) => {
-  return products.filter((product) => product.status === status).length;
+const countAllProducts = (products, loggedInUser) => {
+  return products.filter(
+    (product) => product && product.userID === loggedInUser.id
+  ).length;
+};
+const countProductsByStatus = (products, status, loggedInUser) => {
+  return products.filter(
+    (product) => product.status === status && product.userID === loggedInUser.id
+  ).length;
 };
 export default Sidebar;

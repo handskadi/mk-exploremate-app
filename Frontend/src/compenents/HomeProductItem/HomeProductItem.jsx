@@ -48,6 +48,13 @@ function HomeProductItem({ product, dispatch }) {
             !isAddedToWishList
               ? dispatch({ type: "addToWishList" })
               : dispatch({ type: "removeFromWishList" });
+
+            !isAddedToWishList
+              ? dispatch({ type: "productAddedToWishList", payload: product })
+              : dispatch({
+                  type: "productToRemovedFromWishList",
+                  payload: product,
+                });
           }}
         >
           {isAddedToWishList ? (

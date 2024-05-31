@@ -78,6 +78,8 @@
   color: #999999;
 }
 
+/* Switcher */
+
 @media only screen and (max-width: 900px) {
   .product {
     grid-template-columns: 1fr 3fr 1fr;

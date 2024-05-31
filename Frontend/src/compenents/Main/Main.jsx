@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
 
 function Main({ dispatch, state }) {
-  const { tours } = state;
+  const { tours, loggedInUser } = state;
   const navigate = useNavigate();
 
   const goToAddProduct = () => {
@@ -34,9 +34,12 @@ function Main({ dispatch, state }) {
           </Button>
         </header>
 
-        {tours.map((product, index) => (
-          <ProductItem product={product} dispatch={dispatch} key={index} />
-        ))}
+        {tours.map((product, index) => {
+          if (product.userID === loggedInUser.id)
+            return (
+              <ProductItem product={product} dispatch={dispatch} key={index} />
+            );
+        })}
       </article>
     </main>
   );

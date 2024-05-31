@@ -11,6 +11,8 @@ import {
   faHome,
   faRightFromBracket,
   faHeart,
+  faSliders,
+  faArrowRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import NotificationPanel from "../NotificationPanel/NotificationPanel";
@@ -18,7 +20,9 @@ import { useState } from "react";
 
 function MainNav({ dispatch, state }) {
   const [isOpen, setIsOpen] = useState(false);
-  const { isLoggedIn, addToCartCount, wishListCount } = state;
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+
+  const { isLoggedIn, addToCartCount, wishListCount, loggedInUser } = state;
   return (
     <>
       <nav className={styles.mainNav}>
@@ -79,9 +83,25 @@ function MainNav({ dispatch, state }) {
               </NavLink>
             )}
             {isLoggedIn && (
-              <button onClick={() => dispatch({ type: "logout" })}>
-                Logout
-              </button>
+              <div className={styles.loginContainer}>
+                <div
+                  className={styles.loginActionsBtn}
+                  style={{ display: isUserMenuOpen ? "block" : "none" }}
+                >
+                  <button onClick={() => dispatch({ type: "logout" })}>
+                    <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                    Logout
+                  </button>
+                  <button>
+                    <FontAwesomeIcon icon={faSliders} />
+                    Setting
+                  </button>
+                </div>
+                <img
+                  src={loggedInUser.userImage}
+                  onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                />
+              </div>
             )}
           </li>
         </ul>
@@ -96,7 +116,12 @@ function MainNav({ dispatch, state }) {
             >
               <FontAwesomeIcon icon={faHeart} />
               {wishListCount > 0 && <span>{wishListCount}</span>}
-              <NotificationPanel isOpen={isOpen} setIsOpen={setIsOpen} />
+              <NotificationPanel
+                isOpen={isOpen}
+                setIsOpen={setIsOpen}
+                dispatch={dispatch}
+                state={state}
+              />
             </button>
             <button>
               <FontAwesomeIcon icon={faBasketShopping} />

@@ -10,7 +10,7 @@ function Dashboard({ dispatch, state }) {
   if (!state.isLoggedIn) {
     navigate("/login");
   }
-  const { tours } = state;
+  const { tours, loggedInUser } = state;
 
   return (
     <>
@@ -56,7 +56,7 @@ element.style {
 } */}
             <div>
               <h3>Dashboard Overview</h3>
-              <span>Welcome back!</span>
+              <span>Welcome back, {loggedInUser.accountName}!</span>
             </div>
           </div>
         </div>
@@ -87,19 +87,19 @@ element.style {
             <div className={styles.statCards}>
               <div className={styles.statCard}>
                 <p className={styles.statValue}>
-                  {countProductsByStatus(tours, "active")}
+                  {countProductsByStatus(tours, "active", loggedInUser)}
                 </p>
                 <p className={styles.statLabel}>Active Products</p>
               </div>
               <div className={styles.statCard}>
                 <p className={styles.statValue}>
-                  {countProductsByStatus(tours, "inactive")}
+                  {countProductsByStatus(tours, "inactive", loggedInUser)}
                 </p>
                 <p className={styles.statLabel}>Inactive Products</p>
               </div>
               <div className={styles.statCard}>
                 <p className={styles.statValue}>
-                  {countProductsByStatus(tours, "pause")}
+                  {countProductsByStatus(tours, "pause", loggedInUser)}
                 </p>
                 <p className={styles.statLabel}>Paused Products</p>
               </div>
@@ -130,8 +130,10 @@ element.style {
   );
 }
 
-const countProductsByStatus = (products, status) => {
-  return products.filter((product) => product.status === status).length;
+const countProductsByStatus = (products, status, loggedInUser) => {
+  return products.filter(
+    (product) => product.status === status && product.userID === loggedInUser.id
+  ).length;
 };
 
 Dashboard.propTypes = {

@@ -6,20 +6,28 @@ import PropTypes from "prop-types";
 import Button from "../../compenents/Button/Button";
 import { useNavigate } from "react-router-dom";
 
-const LOGINEMAIL = "alx@swe.com";
-const LOGINPASSWORD = "alx123";
+// const LOGINEMAIL = "alx@swe.com";
+// const LOGINPASSWORD = "alx123";
 
 function Login({ dispatch, state }) {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const navigate = useNavigate();
+  const { users } = state;
 
   function handleLoginSubmit(e) {
     e.preventDefault();
-    if (loginEmail === LOGINEMAIL && loginPassword === LOGINPASSWORD) {
-      dispatch({ type: "login" });
-      navigate("/dashboard");
-    }
+    users.map((user) => {
+      // const LOGINUSERNAME = user.username;
+      const userEmail = user.email;
+      const userPassword = user.password;
+
+      if (loginEmail === userEmail && loginPassword === userPassword) {
+        dispatch({ type: "login" });
+        dispatch({ type: "loggedInUser", payload: user });
+        navigate("/dashboard");
+      }
+    });
   }
 
   return (

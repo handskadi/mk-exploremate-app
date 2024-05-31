@@ -58,7 +58,7 @@ function Slider({ state }) {
           style={{ display: searchQuery && "block" }}
         >
           {filteredTours.map((tour) => (
-            <div key={tour.id}>
+            <div key={tour.code}>
               <img src={tour.image} alt={tour.title} />
               <span>{tour.title}</span> - <span> {tour.duration} Days</span>
             </div>

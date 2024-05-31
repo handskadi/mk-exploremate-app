@@ -54,6 +54,7 @@ function AddNewProduct({ dispatch, state }) {
       image,
       duration: 1,
       rate: "good",
+      userID: state.loggedInUser.id,
     };
 
     dispatch({ type: "addProduct", payload: { product: newProduct } });
