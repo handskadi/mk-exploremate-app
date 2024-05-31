@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 function Login({ dispatch, state }) {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   const { users } = state;
 
@@ -26,6 +27,8 @@ function Login({ dispatch, state }) {
         dispatch({ type: "login" });
         dispatch({ type: "loggedInUser", payload: user });
         navigate("/dashboard");
+      } else {
+        setError("Invalid email or password.");
       }
     });
   }
@@ -48,6 +51,7 @@ function Login({ dispatch, state }) {
               value={loginPassword}
               onChange={(e) => setLoginPassword(e.target.value)}
             />
+            {error && <p className={styles.error}>{error}</p>}
             <Button> Login</Button>
           </form>
         </div>

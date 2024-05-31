@@ -7,6 +7,7 @@ import Contact from "./pages/Contact/Contact";
 import Login from "./pages/Login/Login";
 import { useEffect, useReducer } from "react";
 import AddNewProduct from "./pages/AddNewProduct/AddNewProduct";
+import Product from "./pages/Product/Product";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -52,7 +53,6 @@ function reducer(state, action) {
         productsInWishList: state.productsInWishList.filter(
           (product) => product.code !== action.payload.code
         ),
-        // productsInWishList: [...state.productsInWishList, action.payload],
       };
 
     default:
@@ -61,7 +61,7 @@ function reducer(state, action) {
 }
 
 function App() {
-  const intiatState = {
+  const initialState = {
     isLoggedIn: false,
     addToCartCount: 0,
     isAddedToCart: false,
@@ -75,7 +75,15 @@ function App() {
 
   // const [cartProducts, setCartProducts] = useState([]);
 
-  const [state, dispatch] = useReducer(reducer, intiatState);
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/users")
+      .then((response) => response.json())
+      .then((users) => dispatch({ type: "usersReceived", payload: users }))
+      .catch((error) => console.error("Error fetching users data:", error));
+  }, []);
+
   useEffect(() => {
     fetch("http://localhost:8000/tours")
       .then((response) => response.json())
@@ -92,12 +100,6 @@ function App() {
       .catch((error) => console.error("Error fetching reviews data:", error));
   }, []);
 
-  useEffect(() => {
-    fetch("http://localhost:8000/users")
-      .then((response) => response.json())
-      .then((users) => dispatch({ type: "usersReceived", payload: users }))
-      .catch((error) => console.error("Error fetching users data:", error));
-  }, []);
   return (
     <BrowserRouter>
       <Routes>
@@ -106,6 +108,11 @@ function App() {
         <Route
           path="/dashboard"
           element={<Dashboard dispatch={dispatch} state={state} />}
+        />
+
+        <Route
+          path="/product"
+          element={<Product dispatch={dispatch} state={state} />}
         />
 
         <Route

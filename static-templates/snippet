@@ -1,0 +1,22 @@
+/* Action buttons for Dashboard Page*/
+
+<div className={styles.section}>
+  <h2 className={styles.sectionTitle}>Quick Actions</h2>
+  <div className={styles.actions}>
+    <Link to="/create-tour" className={styles.actionButton}>
+      Create Tour
+    </Link>
+    <Link to="/create-accommodation" className={styles.actionButton}>
+      Create Accommodation
+    </Link>
+    <Link to="/list-cars" className={styles.actionButton}>
+      List Cars for Rental
+    </Link>
+    <Link to="/create-experience" className={styles.actionButton}>
+      Create Travel Experience
+    </Link>
+    <Link to="/manage-products" className={styles.actionButton}>
+      Manage Products
+    </Link>
+  </div>
+</div>;

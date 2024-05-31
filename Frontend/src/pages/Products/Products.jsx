@@ -5,12 +5,16 @@ import Sidebar from "../../compenents/Sidebar/Sidebar";
 import styles from "./Products.module.css";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function Products({ dispatch, state }) {
   const navigate = useNavigate();
-  if (!state.isLoggedIn) {
-    navigate("/login");
-  }
+
+  useEffect(() => {
+    if (!state.isLoggedIn) {
+      navigate("/login");
+    }
+  }, [state.isLoggedIn, navigate]);
 
   return (
     <>

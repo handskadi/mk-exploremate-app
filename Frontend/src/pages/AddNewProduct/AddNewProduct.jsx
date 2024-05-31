@@ -3,7 +3,7 @@ import Header from "../../compenents/Header/Header";
 import Footer from "../../compenents/Footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import MkIcon from "../../compenents/MkIcon/MkIcon";
@@ -23,9 +23,11 @@ function AddNewProduct({ dispatch, state }) {
   );
 
   const navigate = useNavigate();
-  if (!state.isLoggedIn) {
-    navigate("/login");
-  }
+  useEffect(() => {
+    if (!state.isLoggedIn) {
+      navigate("/login");
+    }
+  }, [state.isLoggedIn, navigate]);
 
   () => {
     setImage();
