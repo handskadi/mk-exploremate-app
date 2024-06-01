@@ -35,7 +35,7 @@ function Main({ dispatch, state }) {
         </header>
 
         {tours.map((product, index) => {
-          if (product.userID === loggedInUser.id)
+          if (product.userID == loggedInUser.id)
             return (
               <ProductItem product={product} dispatch={dispatch} key={index} />
             );

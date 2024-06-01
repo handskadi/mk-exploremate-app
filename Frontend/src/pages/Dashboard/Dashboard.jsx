@@ -84,15 +84,8 @@ function Dashboard({ dispatch, state }) {
 
 const countProductsByStatus = (products, status, loggedInUser) => {
   const filteredProducts = products.filter((product) => {
-    const matchesStatus = product.status === status;
-    const matchesUser = product.userID === loggedInUser.id;
-    // console.log(" ________________________________________");
-    // console.log("Product :", product.title);
-    // console.log("Matches Status:", matchesStatus);
-    // console.log("Matches User:", matchesUser);
-    // console.log(" ___:");
-    // console.log("Product userID :", product.userID);
-    // console.log("Logged in user ID :", loggedInUser.id);
+    const matchesStatus = product.status == status;
+    const matchesUser = product.userID == loggedInUser.id;
 
     return matchesStatus && matchesUser;
   });

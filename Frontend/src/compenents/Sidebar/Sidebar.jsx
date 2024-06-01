@@ -50,12 +50,12 @@ Sidebar.propTypes = {
 
 const countAllProducts = (products, loggedInUser) => {
   return products.filter(
-    (product) => product && product.userID === loggedInUser.id
+    (product) => product && product.userID == loggedInUser.id
   ).length;
 };
 const countProductsByStatus = (products, status, loggedInUser) => {
   return products.filter(
-    (product) => product.status === status && product.userID === loggedInUser.id
+    (product) => product.status == status && product.userID == loggedInUser.id
   ).length;
 };
 export default Sidebar;

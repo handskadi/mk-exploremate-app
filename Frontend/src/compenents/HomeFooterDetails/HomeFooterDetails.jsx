@@ -17,7 +17,7 @@ const HomeFooterDetails = () => {
         </div>
         <div className={styles.footerCards}>
           <div className={styles.footerCard}>
-            <img src="http://127.0.0.1:5173/images/logo.png" alt="" />
+            <img src="http://127.0.0.1:5174/images/logo.png" alt="" />
           </div>
           <div className={styles.footerCard}>
             <h3>Contact Info</h3>

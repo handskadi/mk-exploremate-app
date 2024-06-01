@@ -44,12 +44,18 @@ function Login({ dispatch, state }) {
               type="email"
               value={loginEmail}
               onChange={(e) => setLoginEmail(e.target.value)}
+              placeholder="Enter your password"
+              required
+              autoComplete="current-password"
             />
             <label>Your password</label>
             <input
               type="password"
               value={loginPassword}
               onChange={(e) => setLoginPassword(e.target.value)}
+              placeholder="Enter your password"
+              required
+              autoComplete="current-password"
             />
             {error && <p className={styles.error}>{error}</p>}
             <Button> Login</Button>

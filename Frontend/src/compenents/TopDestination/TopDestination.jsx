@@ -4,17 +4,17 @@ import PropTypes from "prop-types";
 
 const destinations = [
   {
-    image: "http://localhost:5173/images/destinations/des1.jpg",
+    image: "http://localhost:5174/images/destinations/des1.jpg",
     name: "Marrakech",
     numberOfProdutcs: 4,
   },
   {
-    image: "http://localhost:5173/images/destinations/des2.jpg",
+    image: "http://localhost:5174/images/destinations/des2.jpg",
     name: "Ouarzazate",
     numberOfProdutcs: 5,
   },
   {
-    image: "http://localhost:5173/images/destinations/des3.jpg",
+    image: "http://localhost:5174/images/destinations/des3.jpg",
     name: "Merzouga",
     numberOfProdutcs: 3,
   },

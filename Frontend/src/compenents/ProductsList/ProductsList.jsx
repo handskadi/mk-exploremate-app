@@ -2,7 +2,7 @@ import HomeProductItem from "../HomeProductItem/HomeProductItem";
 import styles from "./ProductsList.module.css";
 import PropTypes from "prop-types";
 
-const MAX_TOURS = 4;
+const MAX_TOURS = 3;
 
 function ProductsList({ state, dispatch }) {
   const { tours } = state;

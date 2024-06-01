@@ -9,7 +9,7 @@
       "status": "active",
       "isPrivateTour": true,
       "rate": "good",
-      "image": "http://localhost:5173/images/tours/image1.jpg",
+      "image": "http://localhost:5174/images/tours/image1.jpg",
       "userID": 101
     },
     {
@@ -21,7 +21,7 @@
       "status": "inactive",
       "isPrivateTour": false,
       "rate": "poor",
-      "image": "http://localhost:5173/images/tours/image2.jpg",
+      "image": "http://localhost:5174/images/tours/image2.jpg",
       "userID": 101
     },
     {
@@ -33,7 +33,7 @@
       "status": "pause",
       "isPrivateTour": true,
       "rate": "average",
-      "image": "http://localhost:5173/images/tours/image3.jpg",
+      "image": "http://localhost:5174/images/tours/image3.jpg",
       "userID": 102
     },
     {
@@ -45,7 +45,7 @@
       "status": "active",
       "isPrivateTour": true,
       "rate": "good",
-      "image": "http://localhost:5173/images/tours/image4.jpg",
+      "image": "http://localhost:5174/images/tours/image4.jpg",
       "userID": 102
     }
   ],
@@ -94,7 +94,7 @@
       "accountStatus": "active",
       "createdAt": "2023-01-15T08:30:00Z",
       "lastLogin": "2024-05-30T12:45:00Z",
-      "userImage": "http://localhost:5173/images/users/default.jpg"
+      "userImage": "http://localhost:5174/images/users/default.jpg"
     },
     {
       "id": 101,
@@ -106,7 +106,7 @@
       "accountStatus": "active",
       "createdAt": "2022-11-10T10:15:00Z",
       "lastLogin": "2024-05-28T09:20:00Z",
-      "userImage": "http://localhost:5173/images/users/default.jpg"
+      "userImage": "http://localhost:5174/images/users/default.jpg"
     },
     {
       "id": 102,
@@ -118,7 +118,7 @@
       "accountStatus": "active",
       "createdAt": "2023-11-10T10:15:00Z",
       "lastLogin": "2024-05-28T09:20:00Z",
-      "userImage": "http://localhost:5173/images/users/user1.jpg"
+      "userImage": "http://localhost:5174/images/users/user1.jpg"
     }
   ]
 }
