@@ -14,15 +14,10 @@ import {
 function Product({ dispatch, state }) {
   const [formData, setFormData] = useState({
     bookingDate: "",
-    bookingTime: "",
     adults: "",
     children: "",
     roomType: "",
-    promoCode: "",
     specialRequests: "",
-    cardNumber: "",
-    cardExpiry: "",
-    cardCvc: "",
   });
 
   const handleChange = (e) => {
@@ -36,22 +31,22 @@ function Product({ dispatch, state }) {
   };
 
   return (
-    <>
+    <div className={styles.masterContainer}>
       <Header state={state} dispatch={dispatch} />
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles.photos}>
-            <img src="http://localhost:5174/images/tours/image1.jpg" />
-            <img src="http://localhost:5174/images/tours/image1.jpg" />
+            <img src="http://localhost:5174/images/tours/image4.jpg" />
+            <img src="http://localhost:5174/images/tours/image2.jpg" />
+            <img src="http://localhost:5174/images/tours/image3.jpg" />
             <img src="http://localhost:5174/images/tours/image1.jpg" />
           </div>
           <div className={styles.photo}>
             <img src="http://localhost:5174/images/tours/image4.jpg" />
           </div>
           <div className={styles.bookingWidget}>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className={styles.bookigForm}>
               <div className={styles.formGroup}>
-                <label htmlFor="booking-date">Date:</label>
                 <input
                   type="date"
                   id="booking-date"
@@ -63,7 +58,6 @@ function Product({ dispatch, state }) {
               </div>
 
               <div className={styles.formGroup}>
-                <label htmlFor="adults">Adults:</label>
                 <select
                   id="adults"
                   name="adults"
@@ -72,7 +66,7 @@ function Product({ dispatch, state }) {
                   required
                 >
                   <option value="" disabled>
-                    Select
+                    Adults
                   </option>
                   {[...Array(10)].map((_, index) => (
                     <option key={index + 1} value={index + 1}>
@@ -83,7 +77,6 @@ function Product({ dispatch, state }) {
               </div>
 
               <div className={styles.formGroup}>
-                <label htmlFor="children">Children:</label>
                 <select
                   id="children"
                   name="children"
@@ -92,7 +85,7 @@ function Product({ dispatch, state }) {
                   required
                 >
                   <option value="" disabled>
-                    Select
+                    Children
                   </option>
                   {[...Array(10)].map((_, index) => (
                     <option key={index + 1} value={index + 1}>
@@ -103,14 +96,13 @@ function Product({ dispatch, state }) {
               </div>
 
               <div className={styles.formGroup}>
-                <label htmlFor="special-requests">Special Requests:</label>
                 <textarea
                   id="special-requests"
                   name="specialRequests"
                   value={formData.specialRequests}
                   onChange={handleChange}
                   rows="3"
-                  placeholder=""
+                  placeholder="Note..."
                 ></textarea>
               </div>
 
@@ -136,7 +128,7 @@ function Product({ dispatch, state }) {
           </span>
         </div>
         <div className={styles.contentSection}>
-          <div>
+          <div className={styles.contentInnerSection}>
             <h3>Marrakech to Merzouga Desert Tour</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
@@ -145,7 +137,7 @@ function Product({ dispatch, state }) {
               tincidunt tellus est nec elit.
             </p>
           </div>
-          <div>
+          <div className={styles.contentInnerSection}>
             <h3>What is included?</h3>
             <ul>
               <li>4x4 vehicle</li>
@@ -153,7 +145,7 @@ function Product({ dispatch, state }) {
               <li>Desert Camp</li>
             </ul>
           </div>
-          <div>
+          <div className={styles.contentInnerSection}>
             <h3>Tour Details</h3>
             <ul>
               <li>
@@ -179,12 +171,19 @@ function Product({ dispatch, state }) {
               </li>
             </ul>
           </div>
-          <div>Additional Info</div>
+          <div className={styles.contentInnerSection}>
+            <h3>Additional Info</h3>
+            <ul>
+              <li>Ino 1</li>
+              <li>Info 2</li>
+              <li>Info 4</li>
+            </ul>
+          </div>
         </div>
         <div className={styles.relatedProducts}>Related /similar Products</div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

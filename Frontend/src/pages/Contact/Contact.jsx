@@ -74,7 +74,7 @@ function Contact({ state, dispatch }) {
 
         <div className={styles.dashPanels}>
           <div className={styles.dashPanel}>
-            <h3>Contact Us Form</h3>
+            <h3 className={styles.formH3}>Contact Us Form</h3>
             <form onSubmit={handleSubmit} className={styles.contactForm}>
               <div className={styles.formGroup}>
                 <label htmlFor="name">Name</label>

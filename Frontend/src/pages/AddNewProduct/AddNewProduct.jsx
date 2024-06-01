@@ -19,7 +19,7 @@ function AddNewProduct({ dispatch, state }) {
   const [price, setPrice] = useState(0);
   const [currency, setCurrency] = useState("EUR");
   const [image, setImage] = useState(
-    "http://localhost:5173/images/tours/default.png"
+    "http://localhost:5174/images/tours/default.png"
   );
 
   const navigate = useNavigate();
