@@ -15,7 +15,7 @@
 .header {
   display: flex;
   gap: 10px;
-  background: rgb(228, 228, 228);
+  /* background: rgb(228, 228, 228); */
   border-radius: 5px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -41,18 +41,41 @@
   object-fit: cover;
   margin-bottom: 5px;
   border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .photo {
   max-width: 60%;
   flex-grow: 2;
   overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.photo button {
+  position: absolute;
+  background-color: rgb(247, 247, 247);
+  top: 20px;
+  right: 30px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.photo button:hover {
+  background-color: rgb(219, 219, 219);
+}
+.photo button svg {
+  font-size: 16px;
+  margin-right: 5px;
 }
 .photo img {
   max-width: 100%;
   object-fit: cover;
   overflow: hidden;
   border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .bookingWidget {
   flex-grow: 2;
@@ -74,7 +97,7 @@
   font-size: 24px;
 }
 .relatedProducts {
-  border: 2px dashed yellow;
+  /* border: 2px dashed yellow; */
 }
 .contentInnerSection {
   padding-top: 20px;
@@ -122,4 +145,66 @@
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background: #fff;
+}
+
+/* Tour Details section : Itenrary*/
+.itinerary {
+  list-style: none;
+  padding: 20px;
+}
+
+.itinerary h3 {
+  font-size: 16px;
+}
+.itinerary li {
+  border-left: 3px dashed #212b68;
+  margin: 20px;
+  padding-left: 20px;
+}
+
+.itinerary li h4 {
+  background: #186b6d;
+  display: inline-block;
+  margin: 0;
+  margin-left: -35px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  color: #fff;
+}
+.itinerary li div {
+}
+
+.itinerary li div h5 {
+  display: inline-block;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.included,
+.notIncluded {
+  list-style: none;
+}
+
+.included li,
+.notIncluded li {
+  padding-bottom: 10px;
+}
+.included svg {
+  color: green;
+  padding-right: 10px;
+}
+
+.notIncluded svg {
+  color: red;
+  padding-right: 10px;
+}
+
+.productTitle {
+  color: #186b6d;
+}
+
+.container h1 {
+  font-size: 26px;
+  text-transform: capitalize;
+  color: black;
 }

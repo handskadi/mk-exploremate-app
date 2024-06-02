@@ -1,0 +1,73 @@
+/* styles.module.css */
+
+.masterContainer {
+  margin: 0;
+  padding: 0;
+  padding-top: 75px;
+  padding-bottom: 55px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px 40px;
+  font-family: Arial, sans-serif;
+  font-family: "Poppins", Arial, Tahoma, "Bitstream Vera Sans", sans-serif;
+  line-height: 1.6;
+
+  background: #fff;
+}
+
+.container h1 {
+  font-size: 25;
+  margin-bottom: 20px;
+  color: #186b6d;
+}
+
+.container h2 {
+  font-size: 20px;
+  margin-top: 20px;
+  color: #555;
+  border-bottom: 2px dashed #186b6d;
+  display: inline-block;
+}
+
+.container h2 svg {
+  color: #186b6d;
+  padding-right: 10px;
+}
+
+.container h3 {
+  font-size: 18px;
+  margin-top: 15px;
+  color: #777;
+}
+
+.container p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.container ul {
+  list-style-type: none;
+  margin: 10px 0 20px 40px;
+  color: #666;
+}
+
+.container li {
+  margin-bottom: 10px;
+}
+.container li svg {
+  color: #186b6d;
+  padding-right: 10px;
+}
+.container em {
+  font-size: 18px;
+  color: #555;
+  font-weight: normal;
+}
+
+.team {
+  display: flex;
+  flex-flow: row wrap;
+}

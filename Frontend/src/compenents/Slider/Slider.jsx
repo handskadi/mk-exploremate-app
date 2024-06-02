@@ -11,6 +11,7 @@ import {
   faPersonHiking,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function Slider({ state }) {
   const [currentImage, setCurrentImage] = useState(sliderImage);
@@ -58,10 +59,12 @@ function Slider({ state }) {
           style={{ display: searchQuery && "block" }}
         >
           {filteredTours.map((tour) => (
-            <div key={tour.code}>
-              <img src={tour.image} alt={tour.title} />
-              <span>{tour.title}</span> - <span> {tour.duration} Days</span>
-            </div>
+            <Link to={`/product/${tour.code}`} key={tour.code}>
+              <div>
+                <img src={tour.image} alt={tour.title} />
+                <span>{tour.title}</span> - <span> {tour.duration} Days</span>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

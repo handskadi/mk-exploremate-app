@@ -22,7 +22,13 @@ function MainNav({ dispatch, state }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
-  const { isLoggedIn, addToCartCount, wishListCount, loggedInUser } = state;
+  const {
+    isLoggedIn,
+    addToCartCount,
+    wishListCount,
+    loggedInUser,
+    productsInWishList,
+  } = state;
   return (
     <>
       <nav className={styles.mainNav}>
@@ -115,7 +121,9 @@ function MainNav({ dispatch, state }) {
               }}
             >
               <FontAwesomeIcon icon={faHeart} />
-              {wishListCount > 0 && <span>{wishListCount}</span>}
+              {productsInWishList.length > 0 && (
+                <span>{productsInWishList.length}</span>
+              )}
               <NotificationPanel
                 isOpen={isOpen}
                 setIsOpen={setIsOpen}

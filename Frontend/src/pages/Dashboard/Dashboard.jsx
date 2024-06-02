@@ -17,6 +17,7 @@ function Dashboard({ dispatch, state }) {
   if (!state.isLoggedIn) return null;
 
   const { tours, loggedInUser } = state;
+  const date = Date();
   return (
     <>
       <Header state={state} dispatch={dispatch} />
@@ -60,9 +61,15 @@ function Dashboard({ dispatch, state }) {
           <div className={styles.dashPanel}>
             <h3>Recent Activities</h3>
             <ul className={styles.activityList}>
-              <li>User A booked a tour</li>
-              <li>User B left a review</li>
-              <li>User C signed up</li>
+              <li>
+                <strong>Current Session: </strong> {date}
+              </li>
+              <li>
+                <strong>Last Login:</strong> {loggedInUser.lastLogin}
+              </li>
+              <li>
+                <strong>Account Created at:</strong> {loggedInUser.createdAt}
+              </li>
             </ul>
           </div>
           <div className={styles.dashPanel}>
@@ -90,7 +97,7 @@ const countProductsByStatus = (products, status, loggedInUser) => {
     return matchesStatus && matchesUser;
   });
 
-  console.log("Filtered Products:", filteredProducts);
+  // console.log("Filtered Products:", filteredProducts);
   return filteredProducts.length;
 };
 

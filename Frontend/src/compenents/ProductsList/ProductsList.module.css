@@ -1,12 +1,15 @@
 .container {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: row; */
   justify-content: center;
+  align-items: center;
   margin: 0 auto;
   padding: 20px;
   text-align: center;
   min-height: 100px;
+  max-width: 960px;
+  margin-bottom: 20px;
 }
 
 .sectionTitle {

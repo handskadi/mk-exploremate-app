@@ -10,7 +10,54 @@
       "isPrivateTour": true,
       "rate": "good",
       "image": "http://localhost:5174/images/tours/image1.jpg",
-      "userID": 101
+      "userID": 101,
+      "included": ["Camel ride", "Meals", "Guide services"],
+      "notIncluded": ["Personal expenses", "Tips"],
+      "additionalInfo": [
+        "Free cancellation up to 24 hours before the tour",
+        "No refund for late cancellations"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "stops": [
+            {
+              "title": "Marrakech - High Atlas Mountains",
+              "description": "Begin your camel trek into the desert. Nunc bibendum, eros non ultrices vestibulum, sapien velit lacinia lectus, eget faucibus orci augue in sem. Pellentesque id urna diam. In molestie dictum faucibus. Ut non nunc ipsum. Morbi sed felis id augue ultricies ornare. Mauris libero sem, hendrerit sit amet dictum faucibus, hendrerit laoreet diam."
+            },
+            {
+              "title": "High Atlas Mountains - Ouarzazate",
+              "description": "Enjoy a traditional lunch at an oasis. Nunc bibendum, eros non ultrices vestibulum, sapien velit lacinia lectus, eget faucibus orci augue in sem. Pellentesque id urna diam. In molestie dictum faucibus. Ut non nunc ipsum. Morbi sed felis id augue ultricies ornare. Mauris libero sem, hendrerit sit amet dictum faucibus, hendrerit laoreet diam."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "stops": [
+            {
+              "title": "Sunrise Dune Trek",
+              "description": "Experience the breathtaking sunrise over the dunes.Nunc bibendum, eros non ultrices vestibulum, sapien velit lacinia lectus, eget faucibus orci augue in sem. Pellentesque id urna diam. In molestie dictum faucibus. Ut non nunc ipsum. Morbi sed felis id augue ultricies ornare. Mauris libero sem, hendrerit sit amet dictum faucibus, hendrerit laoreet diam."
+            },
+            {
+              "title": "Return to Camp",
+              "description": "Head back to camp for breakfast and departure. Nunc bibendum, eros non ultrices vestibulum, sapien velit lacinia lectus, eget faucibus orci augue in sem. Pellentesque id urna diam. In molestie dictum faucibus. Ut non nunc ipsum. Morbi sed felis id augue ultricies ornare. Mauris libero sem, hendrerit sit amet dictum faucibus, hendrerit laoreet diam."
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "stops": [
+            {
+              "title": "Merzouga Back to Marrakech",
+              "description": "Experience the breathtaking sunrise over the dunes.Nunc bibendum, eros non ultrices vestibulum, sapien velit lacinia lectus, eget faucibus orci augue in sem. Pellentesque id urna diam. In molestie dictum faucibus. Ut non nunc ipsum. Morbi sed felis id augue ultricies ornare. Mauris libero sem, hendrerit sit amet dictum faucibus, hendrerit laoreet diam."
+            },
+            {
+              "title": "Stop at Ait Ben Haddou Kasbah",
+              "description": "Head back to camp for breakfast and departure. Nunc bibendum, eros non ultrices vestibulum, sapien velit lacinia lectus, eget faucibus orci augue in sem. Pellentesque id urna diam. In molestie dictum faucibus. Ut non nunc ipsum. Morbi sed felis id augue ultricies ornare. Mauris libero sem, hendrerit sit amet dictum faucibus, hendrerit laoreet diam."
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "Marrakech to Erg Chegaga Tour",

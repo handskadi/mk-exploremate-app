@@ -17,6 +17,7 @@ import {
 import PropTypes from "prop-types";
 import Button from "../Button/Button";
 import styles from "./ProductItem.module.css";
+import { Link } from "react-router-dom";
 
 function ProductItem({ product, dispatch }) {
   const {
@@ -100,9 +101,9 @@ function ProductItem({ product, dispatch }) {
         </p>
         <span>Product code: {code} </span>|{" "}
         <span>
-          <a href="#" className={styles.primaryColor}>
-            view your product
-          </a>
+          <Link to={`/product/${code}`} className={styles.primaryColor}>
+            view product
+          </Link>
         </span>{" "}
         |
         {rate === "good" && (

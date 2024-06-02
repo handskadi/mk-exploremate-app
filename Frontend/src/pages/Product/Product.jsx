@@ -1,17 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "../../compenents/Footer/Footer";
 import Header from "../../compenents/Header/Header";
 import styles from "./Product.module.css";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock } from "@fortawesome/free-regular-svg-icons";
 import {
+  faCircleXmark,
+  faClock,
+  faHeart,
+} from "@fortawesome/free-regular-svg-icons";
+import {
+  faCircleCheck,
   faMapPin,
   faPeopleGroup,
+  faPersonWalkingLuggage,
   faUserCheck,
 } from "@fortawesome/free-solid-svg-icons";
+import { useParams } from "react-router-dom";
 
 function Product({ dispatch, state }) {
+  const productID = useParams();
+
   const [formData, setFormData] = useState({
     bookingDate: "",
     adults: "",
@@ -30,10 +39,25 @@ function Product({ dispatch, state }) {
     console.log(formData); // You can handle form submission here
   };
 
+  const product = state.tours.find((product) => product.code === productID.id);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
   return (
     <div className={styles.masterContainer}>
       <Header state={state} dispatch={dispatch} />
+
       <div className={styles.container}>
+        <h1>
+          {product?.title} - <FontAwesomeIcon icon={faClock} />{" "}
+          {product?.duration} Days
+        </h1>
         <div className={styles.header}>
           <div className={styles.photos}>
             <img src="http://localhost:5174/images/tours/image4.jpg" />
@@ -42,7 +66,15 @@ function Product({ dispatch, state }) {
             <img src="http://localhost:5174/images/tours/image1.jpg" />
           </div>
           <div className={styles.photo}>
-            <img src="http://localhost:5174/images/tours/image4.jpg" />
+            <img src={product?.image} />
+            <button
+              onClick={() => {
+                dispatch({ type: "productAddedToWishList", payload: product });
+                dispatch({ type: "addToWishList" });
+              }}
+            >
+              <FontAwesomeIcon icon={faHeart} /> Add to Wish List
+            </button>
           </div>
           <div className={styles.bookingWidget}>
             <form onSubmit={handleSubmit} className={styles.bookigForm}>
@@ -112,72 +144,91 @@ function Product({ dispatch, state }) {
         </div>
         <div className={styles.detainSection}>
           <span>
-            <FontAwesomeIcon icon={faClock} /> Duration: 3 days
+            <FontAwesomeIcon icon={faClock} /> Duration: {product?.duration}{" "}
+            Days
           </span>{" "}
           |{" "}
           <span>
-            <FontAwesomeIcon icon={faMapPin} /> Marrakech
+            <FontAwesomeIcon icon={faMapPin} /> {product?.location}
           </span>{" "}
           |{" "}
           <span>
-            <FontAwesomeIcon icon={faUserCheck} /> Private Tour
+            <FontAwesomeIcon icon={faUserCheck} />{" "}
+            {product?.isPrivateTour ? "Private Tour" : "Shared Tour"}
           </span>{" "}
           |{" "}
           <span>
             <FontAwesomeIcon icon={faPeopleGroup} /> Up to 20 Pax
-          </span>
+          </span>{" "}
+          | <span>Product code: {productID.id} </span>
         </div>
         <div className={styles.contentSection}>
           <div className={styles.contentInnerSection}>
-            <h3>Marrakech to Merzouga Desert Tour</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-              vestibulum nunc ac tortor hendrerit ultricies. Aenean lobortis,
-              tellus vel placerat varius, nisi est elementum lacus, quis
-              tincidunt tellus est nec elit.
-            </p>
+            <h3 className={styles.productTitle}>
+              {product?.title} <FontAwesomeIcon icon={faPersonWalkingLuggage} />
+            </h3>
+            <p>{product?.excerpt}</p>
           </div>
           <div className={styles.contentInnerSection}>
             <h3>What is included?</h3>
-            <ul>
-              <li>4x4 vehicle</li>
-              <li>Tour Guide</li>
-              <li>Desert Camp</li>
-            </ul>
+            {product?.included ? (
+              <ul className={styles.included}>
+                {product?.included.map((item, index) => (
+                  <li key={index}>
+                    <FontAwesomeIcon icon={faCircleCheck} /> {item}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p>No content in incclusions ...</p>
+            )}
+          </div>
+          <div className={styles.contentInnerSection}>
+            <h3>What is Not included?</h3>
+            {product?.notIncluded ? (
+              <ul className={styles.notIncluded}>
+                {product.notIncluded.map((item, index) => (
+                  <li key={index}>
+                    <FontAwesomeIcon icon={faCircleXmark} /> {item}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p>No content in exclusions ...</p>
+            )}
           </div>
           <div className={styles.contentInnerSection}>
             <h3>Tour Details</h3>
-            <ul>
-              <li>
-                <h4>Day 1: Marrakech</h4>
-                <p>
-                  tellus vel placerat varius, nisi est elementum lacus, quis
-                  tincidunt tellus est nec elit.
-                </p>
-              </li>
-              <li>
-                <h4>Day 2: Casablanca</h4>
-                <p>
-                  tellus vel placerat varius, nisi est elementum lacus, quis
-                  tincidunt tellus est nec elit.
-                </p>
-              </li>
-              <li>
-                <h4>Day 3: Rabat</h4>
-                <p>
-                  tellus vel placerat varius, nisi est elementum lacus, quis
-                  tincidunt tellus est nec elit.
-                </p>
-              </li>
-            </ul>
+            {product?.itinerary ? (
+              <ul className={styles.itinerary}>
+                <h3>{product.itinerary.length} Days</h3>
+                {product.itinerary.map((day, index) => (
+                  <li key={index}>
+                    <h4> {day.day}</h4>
+                    {day.stops.map((stop, stopIndex) => (
+                      <div key={stopIndex}>
+                        <h5>{stop.title}:</h5>
+                        <p>{stop.description}</p>
+                      </div>
+                    ))}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p>No content in details ...</p>
+            )}
           </div>
           <div className={styles.contentInnerSection}>
             <h3>Additional Info</h3>
-            <ul>
-              <li>Ino 1</li>
-              <li>Info 2</li>
-              <li>Info 4</li>
-            </ul>
+            {product?.additionalInfo ? (
+              <ul>
+                {product?.additionalInfo.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            ) : (
+              <p>No content in Adtional Ino ...</p>
+            )}
           </div>
         </div>
         <div className={styles.relatedProducts}>Related /similar Products</div>

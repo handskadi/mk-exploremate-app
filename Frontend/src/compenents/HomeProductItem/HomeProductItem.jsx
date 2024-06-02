@@ -14,6 +14,7 @@ import { faClock } from "@fortawesome/free-regular-svg-icons";
 import styles from "./HomeProductItem.module.css";
 import Button from "./../Button/Button";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function HomeProductItem({ product, dispatch }) {
   const [isAddedToWishList, SetIsAddedToWishList] = useState(false);
@@ -22,7 +23,9 @@ function HomeProductItem({ product, dispatch }) {
   return (
     <div className={styles.productCard}>
       <div className={styles.productMedia}>
-        <img src={product.image} alt={product.title} />
+        <Link to={`/product/${product.code}`}>
+          <img src={product.image} alt={product.title} />
+        </Link>
         {product.rate === "good" && (
           <span className={`${styles.ratingBadge} ${styles.good}`}>
             <FontAwesomeIcon icon={faCircleCheck} /> Good
@@ -99,7 +102,13 @@ function HomeProductItem({ product, dispatch }) {
         >
           {!isAddedtoCart ? "Add to Cart" : "Added"}
         </Button>
-        <Button type="O" fontSize="13px">
+
+        <Button
+          type="O"
+          fontSize="13px"
+          link={true}
+          to={`/product/${product.code}`}
+        >
           View Details
         </Button>
       </div>
