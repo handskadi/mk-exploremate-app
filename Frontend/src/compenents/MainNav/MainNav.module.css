@@ -102,6 +102,96 @@
   color: #fff;
 }
 
+/* Cart Section*/
+.cartPanelContainer {
+  position: absolute;
+  background: #fff;
+  min-width: 600px;
+  top: 70px;
+  border-radius: 10px;
+  display: none;
+}
+.cartPanel {
+  box-shadow: 1px 3px 8px 0px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "products products pricing"
+    "footer footer footer";
+}
+.cartHeader {
+  border-bottom: 2px solid rgb(231 231 231);
+  grid-area: header;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.cartProductsHolder {
+  grid-area: products;
+}
+.cartProducts {
+  display: grid;
+  grid-template-areas: "leftSide rightSide";
+  border-bottom: 1px solid rgb(235 235 235);
+  border-right: 1px solid rgb(235 235 235);
+  padding: 10px 0 10px 0;
+  margin-bottom: 20px;
+}
+.cartMediaGroup {
+  grid-area: leftSide;
+  font-size: 13px;
+  display: flex;
+  gap: 10px;
+}
+.cartMediaGroup img {
+  width: 60px;
+  height: 40px;
+}
+.productTextGroup {
+  grid-area: rightSide;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 13px;
+}
+.productTextGroup select {
+  font-size: 13px;
+  padding: 5px 10px;
+  margin-top: 5px;
+}
+.cartPricing {
+  grid-area: pricing;
+}
+
+.cartPricing span {
+  display: block;
+  text-align: right;
+  font-size: 13px;
+}
+.cartPricing span:first-child {
+  font-weight: 900;
+}
+.cartPricing span:last-child {
+}
+.cartFooter {
+  grid-area: footer;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cartFooter button {
+  padding: 5px 40px;
+  color: #000;
+  background: #efdd4a;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+.cartFooter button:hover {
+  background: #e0ce45;
+}
+
+/* End Cart Section */
+
 @media only screen and (max-width: 765px) {
   .mainNav ul,
   .rightNav ul {

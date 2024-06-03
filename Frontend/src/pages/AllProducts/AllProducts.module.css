@@ -1,9 +1,4 @@
 .container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
   padding-top: 85px;
   margin-left: 20px;
   margin-right: 20px;

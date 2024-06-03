@@ -284,9 +284,16 @@ function AddNewProduct({ dispatch, state }) {
             <li>
               <FontAwesomeIcon
                 icon={faCircleCheck}
-                className={step >= 2 ? styles.primaryColor : styles.evenColor}
+                className={step >= 1 ? styles.primaryColor : styles.evenColor}
               />{" "}
               BASICS
+            </li>
+            <li>
+              <FontAwesomeIcon
+                icon={faCircleCheck}
+                className={step >= 2 ? styles.primaryColor : styles.evenColor}
+              />{" "}
+              BRANDING
             </li>
             <li>
               <FontAwesomeIcon

@@ -43,6 +43,19 @@ function reducer(state, action) {
         tours: [...state.tours, action.payload.product],
       };
 
+    case "productAddedToCart":
+      return {
+        ...state,
+        productsInCart: [...state.productsInCart, action.payload],
+      };
+    case "productToRemovedFromCart":
+      return {
+        ...state,
+        productsInCart: state.productsInCart.filter(
+          (product) => product.code !== action.payload.code
+        ),
+      };
+
     case "productAddedToWishList":
       return {
         ...state,
@@ -84,6 +97,7 @@ function App() {
     users: [],
     loggedInUser: {},
     productsInWishList: [],
+    productsInCart: [],
   };
 
   // const [cartProducts, setCartProducts] = useState([]);
@@ -112,6 +126,8 @@ function App() {
       )
       .catch((error) => console.error("Error fetching reviews data:", error));
   }, []);
+
+  console.log(state.productsInCart);
 
   return (
     <BrowserRouter>

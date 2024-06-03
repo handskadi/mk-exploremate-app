@@ -17,35 +17,10 @@ function AllProducts({ dispatch, state }) {
     <>
       <Header state={state} dispatch={dispatch} />
       <div className={styles.container}>
-        <ProductsMain state={state} />
-        <ProductsAside />
+        <ProductsMain state={state} dispatch={dispatch} />
       </div>
       <Footer />
     </>
-  );
-}
-
-function ProductsAside() {
-  return (
-    <aside className={styles.aside}>
-      <ul className={styles.productStats}>
-        <li className={styles.productStatsMain}>
-          <span>Filters</span>
-        </li>
-        <li>
-          Active:
-          <span>5</span>
-        </li>
-        <li>
-          Inactive:
-          <span>5</span>
-        </li>
-        <li>
-          Paused:
-          <span>6</span>
-        </li>
-      </ul>
-    </aside>
   );
 }
 

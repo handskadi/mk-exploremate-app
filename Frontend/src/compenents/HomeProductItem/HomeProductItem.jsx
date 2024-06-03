@@ -92,11 +92,25 @@ function HomeProductItem({ product, dispatch }) {
       <div className={styles.productButtons}>
         <Button
           fontSize="13px"
+          // onClick={() => {
+          //   setIsAddedToCart(!isAddedtoCart);
+          //   !isAddedtoCart
+          //     ? dispatch({ type: "addToCart" })
+          //     : dispatch({ type: "removeFromCart" });
+          // }}
           onClick={() => {
             setIsAddedToCart(!isAddedtoCart);
             !isAddedtoCart
               ? dispatch({ type: "addToCart" })
               : dispatch({ type: "removeFromCart" });
+
+            !isAddedtoCart
+              ? dispatch({ type: "productAddedToCart", payload: product })
+              : dispatch({
+                  type: "productToRemovedFromCart",
+                  payload: product,
+                });
+            console.log("Is added");
           }}
           bgColor={isAddedtoCart ? "#979797" : "#186b6d"}
         >
