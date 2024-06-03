@@ -2,7 +2,7 @@
   "tours": [
     {
       "title": "Marrakech to Merzouga Desert Tour",
-      "excerpt": "A full 3 Days desert tour your from Marrakech to Merzouga. Discover the Sahara Desert of Merzouga.",
+      "excerpt": "A full 3 Days desert tour from Marrakech to Merzouga. Discover the Sahara Desert of Merzouga.",
       "duration": 3,
       "location": "Marrakech",
       "code": "903MK2",
@@ -69,7 +69,41 @@
       "isPrivateTour": false,
       "rate": "poor",
       "image": "http://localhost:5174/images/tours/image2.jpg",
-      "userID": 101
+      "userID": 101,
+      "included": ["Transport", "Meals"],
+      "notIncluded": ["Personal expenses", "Tips"],
+      "additionalInfo": [
+        "Moderate difficulty level",
+        "Comfortable clothing recommended"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "stops": [
+            {
+              "title": "Marrakech - Tizi N'Tichka Pass",
+              "description": "Drive through the High Atlas Mountains. Experience the winding roads and beautiful landscapes."
+            },
+            {
+              "title": "Arrival in M'hamid",
+              "description": "Settle into your desert camp and enjoy a traditional dinner."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "stops": [
+            {
+              "title": "Desert Exploration",
+              "description": "Spend the day exploring the dunes of Erg Chegaga."
+            },
+            {
+              "title": "Return to Marrakech",
+              "description": "After breakfast, start your journey back to Marrakech."
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "Morocco Imperial Cities Tour",
@@ -81,10 +115,90 @@
       "isPrivateTour": true,
       "rate": "average",
       "image": "http://localhost:5174/images/tours/image3.jpg",
-      "userID": 102
+      "userID": 102,
+      "included": ["Transport", "Meals", "Guide services"],
+      "notIncluded": ["Personal expenses", "Tips"],
+      "additionalInfo": [
+        "Visas and insurance are the responsibility of the traveler",
+        "Accommodation in 4-star hotels"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "stops": [
+            {
+              "title": "Casablanca - Rabat",
+              "description": "Visit the Hassan II Mosque in Casablanca before heading to Rabat."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "stops": [
+            {
+              "title": "Rabat - Meknes - Fes",
+              "description": "Explore Rabat's key sites, then travel to Meknes and Fes."
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "stops": [
+            {
+              "title": "Fes Exploration",
+              "description": "Full day exploring the historical city of Fes."
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "stops": [
+            {
+              "title": "Fes - Ifrane - Midelt",
+              "description": "Drive through the Middle Atlas Mountains, stopping in Ifrane and Midelt."
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "stops": [
+            {
+              "title": "Midelt - Merzouga",
+              "description": "Continue your journey to the Sahara Desert."
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "stops": [
+            {
+              "title": "Merzouga - Erg Chebbi",
+              "description": "Experience the desert dunes and camel trek."
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "stops": [
+            {
+              "title": "Erg Chebbi - Dades Valley",
+              "description": "Travel through the Dades Valley and enjoy the stunning landscapes."
+            }
+          ]
+        },
+        {
+          "day": 8,
+          "stops": [
+            {
+              "title": "Dades Valley - Marrakech",
+              "description": "End your tour in the vibrant city of Marrakech."
+            }
+          ]
+        }
+      ]
     },
     {
-      "title": "Essaouira-Mogador Excursion ",
+      "title": "Essaouira-Mogador Excursion",
       "excerpt": "Enjoy the beauty of coastal city of Essouira, visit the portuges Port and the old Medina and live the Ganwi vibes.",
       "duration": 1,
       "location": "Essaouira",
@@ -93,7 +207,349 @@
       "isPrivateTour": true,
       "rate": "good",
       "image": "http://localhost:5174/images/tours/image4.jpg",
-      "userID": 102
+      "userID": 102,
+      "included": ["Transport", "Guide services"],
+      "notIncluded": ["Meals", "Personal expenses", "Tips"],
+      "additionalInfo": [
+        "Bring a hat and sunscreen",
+        "Walking shoes recommended"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "stops": [
+            {
+              "title": "Marrakech - Essaouira",
+              "description": "Depart from Marrakech to the coastal city of Essaouira."
+            },
+            {
+              "title": "Essaouira Medina",
+              "description": "Explore the historic Medina and the bustling markets."
+            },
+            {
+              "title": "Essaouira Beach",
+              "description": "Relax at the beautiful beach and enjoy fresh seafood."
+            },
+            {
+              "title": "Return to Marrakech",
+              "description": "Head back to Marrakech in the evening."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Atlas Mountain Day Trip",
+      "excerpt": "Escape the city and explore the Atlas Mountains on this full-day adventure.",
+      "duration": 1,
+      "location": "Atlas Mountains",
+      "code": "123AT1",
+      "status": "active",
+      "isPrivateTour": true,
+      "rate": "excellent",
+      "image": "http://localhost:5174/images/tours/image5.jpg",
+      "userID": 102,
+      "included": ["Transport", "Guide services", "Lunch"],
+      "notIncluded": ["Personal expenses", "Tips"],
+      "additionalInfo": [
+        "Moderate difficulty level",
+        "Bring comfortable walking shoes"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "stops": [
+            {
+              "title": "Marrakech - Imlil",
+              "description": "Drive from Marrakech to the village of Imlil in the Atlas Mountains."
+            },
+            {
+              "title": "Imlil - Aroumd",
+              "description": "Hike from Imlil to the village of Aroumd, enjoying stunning mountain views."
+            },
+            {
+              "title": "Aroumd - Imlil",
+              "description": "Return to Imlil for lunch and explore the local markets."
+            },
+            {
+              "title": "Return to Marrakech",
+              "description": "Head back to Marrakech in the evening."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Chefchaouen Blue City Tour",
+      "excerpt": "Discover the stunning blue-washed streets of Chefchaouen.",
+      "duration": 2,
+      "location": "Chefchaouen",
+      "code": "456CH2",
+      "status": "active",
+      "isPrivateTour": false,
+      "rate": "excellent",
+      "image": "http://localhost:5174/images/tours/image6.jpg",
+      "userID": 102,
+      "included": ["Transport", "Guide services", "Breakfast"],
+      "notIncluded": ["Personal expenses", "Tips"],
+      "additionalInfo": [
+        "Easy difficulty level",
+        "Bring a camera for the picturesque views"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "stops": [
+            {
+              "title": "Tangier - Chefchaouen",
+              "description": "Drive from Tangier to Chefchaouen and settle into your accommodation."
+            },
+            {
+              "title": "Chefchaouen Medina",
+              "description": "Explore the enchanting Medina and its blue-washed streets."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "stops": [
+            {
+              "title": "Chefchaouen - Tangier",
+              "description": "Enjoy a relaxed morning in Chefchaouen before returning to Tangier."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Agadir City Tour",
+      "excerpt": "Explore the vibrant city of Agadir, its beaches, and markets.",
+      "duration": 1,
+      "location": "Agadir",
+      "code": "789AG1",
+      "status": "active",
+      "isPrivateTour": false,
+      "rate": "good",
+      "image": "http://localhost:5174/images/tours/image7.jpg",
+      "userID": 102,
+      "included": ["Transport", "Guide services"],
+      "notIncluded": ["Meals", "Personal expenses", "Tips"],
+      "additionalInfo": ["Easy difficulty level", "Bring a hat and sunscreen"],
+      "itinerary": [
+        {
+          "day": 1,
+          "stops": [
+            {
+              "title": "Agadir Beach",
+              "description": "Start your tour with a visit to the beautiful Agadir Beach."
+            },
+            {
+              "title": "Agadir Medina",
+              "description": "Explore the traditional Medina and its bustling markets."
+            },
+            {
+              "title": "Kasbah of Agadir",
+              "description": "Visit the historic Kasbah with panoramic views of the city."
+            },
+            {
+              "title": "Return to Hotel",
+              "description": "Return to your hotel in the evening."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ouarzazate and Ait Ben Haddou",
+      "excerpt": "Visit the gateway to the Sahara and the historic Ait Ben Haddou Kasbah.",
+      "duration": 1,
+      "location": "Ouarzazate",
+      "code": "910OU1",
+      "status": "active",
+      "isPrivateTour": true,
+      "rate": "excellent",
+      "image": "http://localhost:5174/images/tours/image8.jpg",
+      "userID": 101,
+      "included": ["Transport", "Guide services"],
+      "notIncluded": ["Meals", "Personal expenses", "Tips"],
+      "additionalInfo": [
+        "Moderate difficulty level",
+        "Bring comfortable walking shoes"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "stops": [
+            {
+              "title": "Marrakech - Ouarzazate",
+              "description": "Drive from Marrakech to Ouarzazate, the gateway to the Sahara."
+            },
+            {
+              "title": "Ait Ben Haddou",
+              "description": "Explore the historic Ait Ben Haddou Kasbah, a UNESCO World Heritage Site."
+            },
+            {
+              "title": "Return to Marrakech",
+              "description": "Head back to Marrakech in the evening."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Rabat City Tour",
+      "excerpt": "Discover the capital city of Morocco, Rabat, and its rich history.",
+      "duration": 1,
+      "location": "Rabat",
+      "code": "112RA1",
+      "status": "active",
+      "isPrivateTour": false,
+      "rate": "good",
+      "image": "http://localhost:5174/images/tours/image9.jpg",
+      "userID": 101,
+      "included": ["Transport", "Guide services"],
+      "notIncluded": ["Meals", "Personal expenses", "Tips"],
+      "additionalInfo": ["Easy difficulty level", "Bring a hat and sunscreen"],
+      "itinerary": [
+        {
+          "day": 1,
+          "stops": [
+            {
+              "title": "Hassan Tower",
+              "description": "Visit the iconic Hassan Tower, an unfinished mosque dating back to the 12th century."
+            },
+            {
+              "title": "Royal Palace",
+              "description": "Explore the exterior of the Royal Palace and its beautiful gardens."
+            },
+            {
+              "title": "Kasbah of the Udayas",
+              "description": "Walk through the picturesque Kasbah of the Udayas, with stunning views of the Atlantic Ocean."
+            },
+            {
+              "title": "Return to Hotel",
+              "description": "Return to your hotel in the evening."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Tangier City Tour",
+      "excerpt": "Explore the vibrant city of Tangier, its beaches, and historic sites.",
+      "duration": 1,
+      "location": "Tangier",
+      "code": "234TA1",
+      "status": "active",
+      "isPrivateTour": false,
+      "rate": "good",
+      "image": "http://localhost:5174/images/tours/image10.jpg",
+      "userID": 102,
+      "included": ["Transport", "Guide services"],
+      "notIncluded": ["Meals", "Personal expenses", "Tips"],
+      "additionalInfo": ["Easy difficulty level", "Bring a hat and sunscreen"],
+      "itinerary": [
+        {
+          "day": 1,
+          "stops": [
+            {
+              "title": "Tangier Beach",
+              "description": "Start your tour with a visit to the beautiful Tangier Beach."
+            },
+            {
+              "title": "Tangier Medina",
+              "description": "Explore the traditional Medina and its bustling markets."
+            },
+            {
+              "title": "Kasbah Museum",
+              "description": "Visit the historic Kasbah Museum with its rich collection of artifacts."
+            },
+            {
+              "title": "Return to Hotel",
+              "description": "Return to your hotel in the evening."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Fes Medina Tour",
+      "excerpt": "Dive into the historic and cultural heart of Fes with this full-day Medina tour.",
+      "duration": 1,
+      "location": "Fes",
+      "code": "345FE1",
+      "status": "active",
+      "isPrivateTour": true,
+      "rate": "excellent",
+      "image": "http://localhost:5174/images/tours/image11.jpg",
+      "userID": 101,
+      "included": ["Transport", "Guide services"],
+      "notIncluded": ["Meals", "Personal expenses", "Tips"],
+      "additionalInfo": [
+        "Moderate difficulty level",
+        "Bring comfortable walking shoes"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "stops": [
+            {
+              "title": "Bou Inania Madrasa",
+              "description": "Visit the historic Bou Inania Madrasa, an architectural masterpiece."
+            },
+            {
+              "title": "Al Quaraouiyine University",
+              "description": "Explore the world's oldest continually operating university."
+            },
+            {
+              "title": "Chouara Tannery",
+              "description": "See the traditional leather tanning process at the Chouara Tannery."
+            },
+            {
+              "title": "Return to Hotel",
+              "description": "Return to your hotel in the evening."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Meknes Historical Tour",
+      "excerpt": "Discover the historic sites of Meknes, a UNESCO World Heritage site.",
+      "duration": 1,
+      "location": "Meknes",
+      "code": "456ME1",
+      "status": "active",
+      "isPrivateTour": false,
+      "rate": "good",
+      "image": "http://localhost:5174/images/tours/image12.jpg",
+      "userID": 102,
+      "included": ["Transport", "Guide services"],
+      "notIncluded": ["Meals", "Personal expenses", "Tips"],
+      "additionalInfo": ["Easy difficulty level", "Bring a hat and sunscreen"],
+      "itinerary": [
+        {
+          "day": 1,
+          "stops": [
+            {
+              "title": "Bab Mansour",
+              "description": "Visit the grand gateway of Bab Mansour, an iconic landmark of Meknes."
+            },
+            {
+              "title": "Mausoleum of Moulay Ismail",
+              "description": "Explore the beautifully preserved Mausoleum of Moulay Ismail."
+            },
+            {
+              "title": "Heri es-Souani",
+              "description": "Discover the historic granaries and stables of Heri es-Souani."
+            },
+            {
+              "title": "Return to Hotel",
+              "description": "Return to your hotel in the evening."
+            }
+          ]
+        }
+      ]
     }
   ],
   "reviews": [

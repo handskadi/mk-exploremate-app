@@ -5,24 +5,35 @@ import styles from "./Main.module.css";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 function Main({ dispatch, state }) {
   const { tours, loggedInUser } = state;
+  const [filter, setFilter] = useState("all");
   const navigate = useNavigate();
 
   const goToAddProduct = () => {
     navigate("/add-product");
   };
 
+  const handleFilterChange = (event) => {
+    setFilter(event.target.value);
+  };
+
+  const filteredTours = tours.filter((tour) => {
+    if (filter === "all") return true;
+    return tour.status === filter;
+  });
+
   return (
     <main className={styles.main}>
       <article>
         <div className={styles.filter}>
-          <select>
+          <select value={filter} onChange={handleFilterChange}>
             <option value="all">All Products</option>
-            <option value="">Active</option>
-            <option value="">Inactive</option>
-            <option value="">Pause</option>
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+            <option value="pause">Pause</option>
           </select>
         </div>
 
@@ -34,7 +45,7 @@ function Main({ dispatch, state }) {
           </Button>
         </header>
 
-        {tours.map((product, index) => {
+        {filteredTours.map((product, index) => {
           if (product.userID == loggedInUser.id)
             return (
               <ProductItem product={product} dispatch={dispatch} key={index} />

@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const MAX_TOURS = 20;
 
@@ -38,6 +39,7 @@ function ProductsList({ state, dispatch }) {
       <div className={styles.sectionTitle}>
         <h2>Top Tours</h2>
         <p>Discover Morocco with Mk ExploreMate!</p>
+        <Link to="/all-products">All Tours</Link>
       </div>
       <Slider {...settings}>
         {limitedProducts.map((product, index) => (

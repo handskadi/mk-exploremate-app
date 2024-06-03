@@ -2,7 +2,7 @@ import Footer from "../../compenents/Footer/Footer";
 import Header from "../../compenents/Header/Header";
 import PropTypes from "prop-types";
 import styles from "./Dashboard.module.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MkIcon from "../../compenents/MkIcon/MkIcon";
 import { useEffect } from "react";
 
@@ -58,6 +58,26 @@ function Dashboard({ dispatch, state }) {
               </div>
             </div>
           </div>
+
+          <div className={styles.dashPanel}>
+            <div className={styles.section}>
+              <h3>Quick Actions</h3>
+              <div className={styles.actions}>
+                <Link to="/add-product" className={styles.actionButton}>
+                  Create New Product
+                </Link>
+                <Link to="/products" className={styles.actionButton}>
+                  Manage Your Listings
+                </Link>
+                <Link to="/all-products" className={styles.actionButton}>
+                  View all products
+                </Link>
+                <Link to="/" className={styles.actionButton}>
+                  Bookings
+                </Link>
+              </div>
+            </div>
+          </div>
           <div className={styles.dashPanel}>
             <h3>Recent Activities</h3>
             <ul className={styles.activityList}>
@@ -72,16 +92,11 @@ function Dashboard({ dispatch, state }) {
               </li>
             </ul>
           </div>
-          <div className={styles.dashPanel}>
-            <h3>Messages</h3>
-            <p className={styles.messageInfo}>You have 5 new messages</p>
-            <button className={styles.viewButton}>View Messages</button>
-          </div>
-          <div className={styles.dashPanel}>
+          {/* <div className={styles.dashPanel}>
             <h3>Notifications</h3>
             <p className={styles.notificationInfo}>3 new notifications</p>
             <button className={styles.viewButton}>View Notifications</button>
-          </div>
+          </div> */}
         </div>
       </div>
       <Footer />
@@ -97,15 +112,8 @@ const countProductsByStatus = (products, status, loggedInUser) => {
     return matchesStatus && matchesUser;
   });
 
-  // console.log("Filtered Products:", filteredProducts);
   return filteredProducts.length;
 };
-
-// const countProductsByStatus = (products, status, loggedInUser) => {
-//   return products.filter(
-//     (product) => product.status === status && product.userID === loggedInUser.id
-//   ).length;
-// };
 
 Dashboard.propTypes = {
   dispatch: PropTypes.func,

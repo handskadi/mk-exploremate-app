@@ -8,6 +8,7 @@ import Login from "./pages/Login/Login";
 import { useEffect, useReducer } from "react";
 import AddNewProduct from "./pages/AddNewProduct/AddNewProduct";
 import Product from "./pages/Product/Product";
+import AllProducts from "./pages/AllProducts/AllProducts";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -134,6 +135,11 @@ function App() {
         <Route
           path="/add-product"
           element={<AddNewProduct dispatch={dispatch} state={state} />}
+        />
+
+        <Route
+          path="/all-products"
+          element={<AllProducts dispatch={dispatch} state={state} />}
         />
       </Routes>
     </BrowserRouter>

@@ -15,6 +15,10 @@
 .sectionTitle {
   width: 100%;
 }
+.sectionTitle a {
+  color: #665f8b;
+  margin-bottom: 10px;
+}
 .sectionTitle h2 {
   padding: 20px 20px 0px 20px;
   margin: 0;
@@ -24,4 +28,5 @@
 
 .sectionTitle p {
   margin-top: 10px;
+  margin-bottom: 5px;
 }
