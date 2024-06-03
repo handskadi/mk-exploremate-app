@@ -78,6 +78,37 @@
   color: #999999;
 }
 
+/* Managment Panel*/
+.productManagementPanel {
+  margin-top: -31px;
+  margin-bottom: 80px;
+  position: relative;
+}
+.closeBtn {
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  background: #b50e0e;
+  color: #fff;
+  border: 1px solid #555;
+  cursor: pointer;
+}
+.innerPanel {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.innerPanel form {
+  align-items: center;
+}
+
+.parmContainer {
+  margin-right: 20px;
+  margin-bottom: 29px;
+}
+
 /* Switcher */
 
 @media only screen and (max-width: 900px) {

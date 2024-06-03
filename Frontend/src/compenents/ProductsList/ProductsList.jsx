@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const MAX_TOURS = 20;
+const MAX_TOURS = 100;
 
 function ProductsList({ state, dispatch }) {
   const { tours } = state;
@@ -42,14 +42,16 @@ function ProductsList({ state, dispatch }) {
         <Link to="/all-products">All Tours</Link>
       </div>
       <Slider {...settings}>
-        {limitedProducts.map((product, index) => (
-          <HomeProductItem
-            product={product}
-            key={index}
-            dispatch={dispatch}
-            state={state}
-          />
-        ))}
+        {limitedProducts
+          .filter((product) => product.isTopTour)
+          .map((product, index) => (
+            <HomeProductItem
+              product={product}
+              key={index}
+              dispatch={dispatch}
+              state={state}
+            />
+          ))}
       </Slider>
     </div>
   );

@@ -56,6 +56,18 @@ function reducer(state, action) {
         ),
       };
 
+    case "updateTour":
+      console.log(action.payload);
+
+      return {
+        ...state,
+        tours: state.tours.map((tour) =>
+          tour.code === action.payload.product.code
+            ? action.payload.product
+            : tour
+        ),
+      };
+
     default:
       throw new Error(`Unknown action: ${action.type}`);
   }
