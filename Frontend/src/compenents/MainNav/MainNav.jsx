@@ -25,13 +25,8 @@ function MainNav({ dispatch, state }) {
   const [isCartOpen, setIscartOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
-  const {
-    isLoggedIn,
-    addToCartCount,
-
-    loggedInUser,
-    productsInWishList,
-  } = state;
+  const { isLoggedIn, loggedInUser, productsInWishList, productsInCart } =
+    state;
 
   const totalPrice = state.productsInCart.reduce((total, product) => {
     return total + product.price;
@@ -136,7 +131,11 @@ function MainNav({ dispatch, state }) {
               )}
               {state.productsInCart.map((product, index) => {
                 return (
-                  <div className={styles.cartProducts} key={index}>
+                  <div
+                    className={styles.cartProducts}
+                    key={index}
+                    style={{ position: "relative", right: 1, top: 1 }}
+                  >
                     <div className={styles.cartMediaGroup}>
                       <img src={product.image} alt="" />
                       <div className="productTitle">{product.title}</div>
@@ -157,6 +156,17 @@ function MainNav({ dispatch, state }) {
                         </select>
                       </div>
                     </div>
+                    <button
+                      className={styles.cartProClodeBtn}
+                      onClick={() => {
+                        dispatch({
+                          type: "productToRemovedFromCart",
+                          payload: product,
+                        });
+                      }}
+                    >
+                      x
+                    </button>
                   </div>
                 );
               })}
@@ -190,7 +200,9 @@ function MainNav({ dispatch, state }) {
             </button>
             <button onClick={() => setIscartOpen(!isCartOpen)}>
               <FontAwesomeIcon icon={faBasketShopping} />
-              {addToCartCount > 0 && <span>{addToCartCount}</span>}
+              {productsInCart.length > 0 && (
+                <span>{productsInCart.length}</span>
+              )}
             </button>
             <button>
               <FontAwesomeIcon icon={faBell} />

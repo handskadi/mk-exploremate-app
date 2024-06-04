@@ -50,7 +50,17 @@ function NotificationPanel({ isOpen, state, dispatch }) {
                 >
                   x
                 </div>
-                <div className={styles.notifAddToCartBtn} title="Add to Cart">
+                <div
+                  className={styles.notifAddToCartBtn}
+                  title="Add to Cart"
+                  onClick={() => {
+                    dispatch({ type: "productAddedToCart", payload: product });
+                    dispatch({
+                      type: "productToRemovedFromWishList",
+                      payload: product,
+                    });
+                  }}
+                >
                   {" "}
                   +
                 </div>
