@@ -81,6 +81,16 @@ function reducer(state, action) {
         ),
       };
 
+    case "updateProductQuantity":
+      return {
+        ...state,
+        productsInCart: state.productsInCart.map((product) =>
+          product.id === action.payload.productId
+            ? { ...product, quantity: action.payload.quantity }
+            : product
+        ),
+      };
+
     default:
       throw new Error(`Unknown action: ${action.type}`);
   }
@@ -126,8 +136,6 @@ function App() {
       )
       .catch((error) => console.error("Error fetching reviews data:", error));
   }, []);
-
-  console.log(state.productsInCart);
 
   return (
     <BrowserRouter>

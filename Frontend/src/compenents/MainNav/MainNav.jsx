@@ -29,8 +29,16 @@ function MainNav({ dispatch, state }) {
     state;
 
   const totalPrice = state.productsInCart.reduce((total, product) => {
-    return total + product.price;
+    return total + product.price * (product.quantity || 1);
   }, 0);
+  const formattedPrice = totalPrice.toFixed(2);
+
+  const handleQuantityChange = (productId, quantity) => {
+    dispatch({
+      type: "updateProductQuantity",
+      payload: { productId, quantity: parseInt(quantity, 10) },
+    });
+  };
 
   return (
     <>
@@ -148,11 +156,17 @@ function MainNav({ dispatch, state }) {
                       <div className="productText">
                         <span>Quantity</span>
                         <br />
-                        <select>
-                          <option value="1">1</option>
-                          <option value="1">2</option>
-                          <option value="1">3</option>
-                          <option value="1">4</option>
+                        <select
+                          value={product.quantity}
+                          onChange={(e) =>
+                            handleQuantityChange(product.id, e.target.value)
+                          }
+                        >
+                          {[...Array(10).keys()].map((num) => (
+                            <option key={num + 1} value={num + 1}>
+                              {num + 1}
+                            </option>
+                          ))}
                         </select>
                       </div>
                     </div>
@@ -173,7 +187,7 @@ function MainNav({ dispatch, state }) {
             </div>
             <div className={styles.cartPricing}>
               <span>Total:</span>
-              <span>{totalPrice}</span>
+              <span>{formattedPrice}</span>
             </div>
             <div className={styles.cartFooter}>
               <button>
