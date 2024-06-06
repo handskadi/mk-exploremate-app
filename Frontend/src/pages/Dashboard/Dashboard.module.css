@@ -1,22 +1,26 @@
 /* styles.module.css */
+
+/* General styles */
 .container {
-  padding: 20px;
-  padding-top: 65px;
   max-width: 960px;
   margin: 0 auto;
+  padding: 20px;
+  padding-top: 65px;
   font-size: 18px;
   font-family: "Poppins", Arial, Tahoma, "Bitstream Vera Sans", sans-serif;
 }
 
+/* Dashboard Header */
 .dashHeader {
+  padding: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
-  padding: 20px;
   background: white;
   border-radius: 9px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Dashboard Panel */
 .dashPanel {
   background-color: #ffffff;
   border-radius: 8px;
@@ -25,6 +29,7 @@
   margin-bottom: 20px;
 }
 
+/* Statistics Cards */
 .statCards {
   display: flex;
   justify-content: space-between;
@@ -50,6 +55,7 @@
   margin-top: 5px;
 }
 
+/* Activity List */
 .activityList {
   list-style-type: disclosure-closed;
   padding: 0;
@@ -58,11 +64,13 @@
   margin-left: 38px;
 }
 
+/* Info Messages */
 .messageInfo,
 .notificationInfo {
   margin-bottom: 10px;
 }
 
+/* View Button */
 .viewButton {
   background-color: #3366ff;
   color: #ffffff;
@@ -77,6 +85,7 @@
   background-color: #186b6d;
 }
 
+/* Actions */
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -97,19 +106,22 @@
   background-color: #1d797c;
 }
 
-.suceessAdd {
-  border: #186b6d 2 dashed;
-  color: hsl(218, 4%, 45%);
+/* Success Add */
+.successAdd {
   display: flex;
+  border: #186b6d 2px dashed;
+  color: hsl(218, 4%, 45%);
 }
-.suceessAdd h3 {
-  color: #186b6d;
+
+.successAdd h3 {
   font-size: 24px;
   font-weight: bolder;
+  color: #186b6d;
   margin: 0;
   padding-left: 20px;
 }
-.suceessAdd span {
+
+.successAdd span {
   display: block;
   padding-left: 20px;
 }
