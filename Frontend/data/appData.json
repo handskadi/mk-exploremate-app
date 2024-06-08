@@ -579,6 +579,8 @@
   "reviews": [
     {
       "id": 1,
+      "tourID": "234TA1",
+      "userID": 101,
       "author": "John Doe",
       "date": "2024-05-01",
       "reviewTitle": "Amazing Experience!",
@@ -587,6 +589,8 @@
     },
     {
       "id": 2,
+      "tourID": "903MK2",
+      "userID": 102,
       "author": "Jane Smith",
       "date": "2024-04-28",
       "reviewTitle": "Great Service",
@@ -595,6 +599,8 @@
     },
     {
       "id": 3,
+      "tourID": "903MK2",
+      "userID": 101,
       "author": "Michael Brown",
       "date": "2024-04-25",
       "reviewTitle": "Good Value",
@@ -603,6 +609,8 @@
     },
     {
       "id": 4,
+      "tourID": "112RA1",
+      "userID": 100,
       "author": "David Black",
       "date": "2024-04-20",
       "reviewTitle": "Fantastic Adventure",

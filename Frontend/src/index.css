@@ -16,3 +16,16 @@ body {
 .carousel .carousel-status {
   display: none;
 }
+
+/* .whataspp {
+  position: fixed;
+  bottom: 60px;
+  right: 30px;
+  padding: 7px 9px;
+  background-color: #186b6d;
+  border-radius: 50%;
+}
+.whataspp svg {
+  color: #fff;
+  font-size: 42px;
+} */

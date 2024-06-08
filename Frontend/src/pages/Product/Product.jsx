@@ -40,6 +40,9 @@ function Product({ dispatch, state }) {
   };
 
   const product = state.tours.find((product) => product.code === productID.id);
+  const filteredReviews = state?.reviews.filter(
+    (review) => product?.code === review?.tourID
+  );
 
   useEffect(() => {
     window.scrollTo({
@@ -230,12 +233,64 @@ function Product({ dispatch, state }) {
               <p>No content in Adtional Ino ...</p>
             )}
           </div>
+          <div className={styles.contentInnerSection}>
+            <h3>Reviews</h3>
+            {filteredReviews.length > 0 ? (
+              filteredReviews.map((review, index) => (
+                <div key={index}>
+                  <p>{review?.date}</p>
+                  <p>
+                    {state?.users.map((user) => {
+                      if (user.id === review?.userID) {
+                        return <span key={user.id}>{user?.accountName}</span>;
+                      }
+                      return null;
+                    })}
+                  </p>
+                  <p>{review?.reviewTitle}</p>
+                  <p>{review?.reviewDescription}</p>
+                  <p>{stars(review?.ratingScore)}</p>
+                  <hr />
+                </div>
+              ))
+            ) : (
+              <p>No Reviews...</p>
+            )}
+          </div>
+          <div className={styles.relatedProducts}>
+            <h3>Related /similar Products</h3>
+            Related /similar Products
+          </div>
         </div>
-        <div className={styles.relatedProducts}>Related /similar Products</div>
       </div>
       <Footer />
     </div>
   );
+}
+
+function stars(rating) {
+  let stars;
+  switch (rating) {
+    case 1:
+      stars = <>⭐</>;
+      break;
+    case 2:
+      stars = <>⭐⭐</>;
+      break;
+    case 3:
+      stars = <>⭐⭐⭐</>;
+      break;
+    case 4:
+      stars = <>⭐⭐⭐⭐</>;
+      break;
+    case 5:
+      stars = <>⭐⭐⭐⭐⭐</>;
+      break;
+    default:
+      stars = null;
+  }
+
+  return stars;
 }
 
 Product.propTypes = {

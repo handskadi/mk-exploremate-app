@@ -45,13 +45,14 @@ function AddNewProduct({ dispatch, state }) {
   function handleAddProductSubmit(e) {
     e.preventDefault();
     const newProduct = {
-      id: `a24ce40f-262c-412f-bb92-cb2d820139e3-${Date.now()}`,
+      id: `MK${Date.now()}`,
       productType,
       title,
       excerpt,
       location,
-      code: `code-${Date.now()}`,
+      code: `${state.loggedInUser.id}P${Date.now()}`,
       status,
+      price: Number(price),
       isPrivate,
       image,
       duration: 1,
@@ -60,7 +61,6 @@ function AddNewProduct({ dispatch, state }) {
     };
 
     dispatch({ type: "addProduct", payload: { product: newProduct } });
-    console.log(newProduct);
     resetForm();
     setStep(6);
   }

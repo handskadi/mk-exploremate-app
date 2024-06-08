@@ -9,6 +9,8 @@ import { useEffect, useReducer } from "react";
 import AddNewProduct from "./pages/AddNewProduct/AddNewProduct";
 import Product from "./pages/Product/Product";
 import AllProducts from "./pages/AllProducts/AllProducts";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -178,6 +180,9 @@ function App() {
           element={<AllProducts dispatch={dispatch} state={state} />}
         />
       </Routes>
+      {/* <div className="whataspp">
+        <FontAwesomeIcon icon={faWhatsapp} />
+      </div> */}
     </BrowserRouter>
   );
 }
